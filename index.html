@@ -1,0 +1,2489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reseller Hub — Premium Domain Registrar</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23a855f7'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3CradialGradient id='s' cx='0.3' cy='0.3'%3E%3Cstop offset='0' stop-color='%23ffffff' stop-opacity='0.4'/%3E%3Cstop offset='1' stop-color='%23ffffff' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Crect width='64' height='64' rx='14' fill='url(%23s)'/%3E%3Cpath d='M18 18h10c5 0 9 3 9 8 0 4-2 6-5 7l7 13h-6l-6-12h-4v12h-5V18zm5 4v8h5c2 0 4-1 4-4s-2-4-4-4h-5z' fill='white'/%3E%3Ccircle cx='46' cy='46' r='6' fill='white' opacity='0.95'/%3E%3Ccircle cx='46' cy='46' r='3' fill='url(%23g)'/%3E%3C/svg%3E" />
+<style>
+  :root {
+    --bg-0: #000000;
+    --bg-1: #050508;
+    --bg-2: #0a0a10;
+    --surface: rgba(255, 255, 255, 0.025);
+    --surface-strong: rgba(255, 255, 255, 0.05);
+    --surface-hover: rgba(255, 255, 255, 0.08);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.14);
+    --border-glow: rgba(168, 85, 247, 0.4);
+    --text-0: #ffffff;
+    --text-1: #d4d4d8;
+    --text-2: #71717a;
+    --text-3: #52525b;
+    --accent: #a855f7;
+    --accent-2: #22d3ee;
+    --accent-3: #ec4899;
+    --success: #22c55e;
+    --danger: #ef4444;
+    --warn: #f59e0b;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --blur: 20px;
+    --blur-strong: 40px;
+    --shadow-1: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --shadow-2: 0 30px 80px rgba(0, 0, 0, 0.7);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-0);
+    background: var(--bg-0);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .cursor-light { position: fixed; pointer-events: none; z-index: 1; transform: translate(-50%, -50%); mix-blend-mode: screen; will-change: transform; }
+  .cursor-light.primary { width: 900px; height: 900px; background: radial-gradient(circle, rgba(168, 85, 247, 0.14) 0%, rgba(34, 211, 238, 0.05) 35%, transparent 70%); filter: blur(30px); }
+  .cursor-light.secondary { width: 500px; height: 500px; background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%); filter: blur(40px); }
+
+  .ambient { position: fixed; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+  .blob { position: absolute; border-radius: 50%; filter: blur(120px); will-change: transform; }
+  .blob.b1 { width: 700px; height: 700px; background: radial-gradient(circle, #a855f7 0%, transparent 70%); top: -250px; left: -250px; opacity: 0.25; animation: drift1 28s ease-in-out infinite alternate; }
+  .blob.b2 { width: 800px; height: 800px; background: radial-gradient(circle, #22d3ee 0%, transparent 70%); top: 30%; right: -300px; opacity: 0.18; animation: drift2 35s ease-in-out infinite alternate; }
+  .blob.b3 { width: 600px; height: 600px; background: radial-gradient(circle, #ec4899 0%, transparent 70%); bottom: -250px; left: 35%; opacity: 0.12; animation: drift3 40s ease-in-out infinite alternate; }
+  @keyframes drift1 { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(180px, 120px) scale(1.25); } }
+  @keyframes drift2 { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(-150px, 100px) scale(1.2); } }
+  @keyframes drift3 { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(120px, -100px) scale(1.3); } }
+
+  #particles { position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.6; }
+  .grain { position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.035; mix-blend-mode: overlay; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
+
+  .shell { position: relative; z-index: 2; min-height: 100vh; display: flex; flex-direction: column; }
+
+  header.nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 32px; backdrop-filter: blur(var(--blur-strong)) saturate(180%); -webkit-backdrop-filter: blur(var(--blur-strong)) saturate(180%); background: rgba(0, 0, 0, 0.5); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; gap: 20px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -0.02em; font-size: 17px; flex-shrink: 0; }
+  .brand-logo { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, #a855f7 0%, #22d3ee 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 24px rgba(168, 85, 247, 0.5), inset 0 1px 0 rgba(255,255,255,0.3); position: relative; overflow: hidden; }
+  .brand-logo::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), transparent 50%); }
+  .brand-logo svg { width: 20px; height: 20px; position: relative; z-index: 1; }
+  .brand-text { background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  .nav-center { display: flex; gap: 28px; font-size: 13px; color: var(--text-1); flex: 1; justify-content: center; }
+  .nav-center a { color: inherit; text-decoration: none; transition: color .2s ease; position: relative; }
+  .nav-center a:hover { color: var(--text-0); }
+  .nav-center a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transition: width .3s ease; }
+  .nav-center a:hover::after { width: 100%; }
+
+  .nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+  .selector { position: relative; display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); backdrop-filter: blur(var(--blur)); font-size: 12px; color: var(--text-1); cursor: pointer; transition: all .2s ease; user-select: none; }
+  .selector:hover { background: var(--surface-strong); border-color: var(--border-strong); }
+  .selector svg { width: 12px; height: 12px; flex-shrink: 0; }
+  .selector .flag { font-size: 14px; }
+  .dropdown { position: absolute; top: calc(100% + 8px); right: 0; min-width: 200px; max-height: 320px; overflow-y: auto; border-radius: var(--radius-md); border: 1px solid var(--border-strong); background: rgba(10, 10, 15, 0.85); backdrop-filter: blur(var(--blur-strong)) saturate(180%); box-shadow: var(--shadow-2); padding: 6px; display: none; z-index: 200; }
+  .dropdown.open { display: block; animation: fadeDown .25s cubic-bezier(.2,.7,.2,1); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+  .dropdown-item { padding: 8px 12px; border-radius: 8px; font-size: 13px; color: var(--text-1); cursor: pointer; display: flex; align-items: center; gap: 10px; transition: background .15s ease; }
+  .dropdown-item:hover { background: var(--surface-strong); color: var(--text-0); }
+  .dropdown-item.active { background: rgba(168, 85, 247, 0.15); color: var(--text-0); }
+  .dropdown-item .flag { font-size: 16px; }
+  .dropdown-item .meta { font-size: 11px; color: var(--text-3); margin-left: auto; }
+
+  .nav-cta { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--border-strong); background: linear-gradient(180deg, rgba(168, 85, 247, 0.15), rgba(168, 85, 247, 0.05)); font-size: 13px; color: var(--text-0); cursor: pointer; transition: all .2s ease; font-weight: 500; position: relative; overflow: hidden; }
+  .nav-cta:hover { background: linear-gradient(180deg, rgba(168, 85, 247, 0.25), rgba(168, 85, 247, 0.1)); border-color: var(--border-glow); }
+
+  main { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 80px 24px 80px; }
+
+  .hero { max-width: 960px; width: 100%; text-align: center; position: relative; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); backdrop-filter: blur(var(--blur)); font-size: 12px; color: var(--text-1); margin-bottom: 24px; position: relative; overflow: hidden; }
+  .eyebrow::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.08), transparent); animation: shimmer 3s ease-in-out infinite; }
+  @keyframes shimmer { 0%, 100% { transform: translateX(-100%); } 50% { transform: translateX(100%); } }
+  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--success); box-shadow: 0 0 10px var(--success); animation: pulse 2s ease-in-out infinite; position: relative; z-index: 1; }
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.2); } }
+  .eyebrow span { position: relative; z-index: 1; }
+
+  h1 { font-size: clamp(40px, 7vw, 84px); line-height: 1.0; margin: 0 0 24px; letter-spacing: -0.045em; font-weight: 700; background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  h1 .accent-text { background: linear-gradient(135deg, #a855f7 0%, #22d3ee 50%, #ec4899 100%); background-size: 200% 200%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: gradientShift 8s ease infinite; }
+  @keyframes gradientShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
+  /* Dynamic headline animated word */
+  .accent-text { display: inline; }
+  .dyn-clip { position: relative; display: inline-block; vertical-align: baseline; overflow: hidden; height: 1.05em; min-width: 0; }
+  .dyn-word { position: absolute; left: 0; top: 0; right: 0; display: block; line-height: 1.05em; transform: translateY(0); opacity: 1; transition: transform .55s cubic-bezier(.2,.9,.2,1), opacity .45s ease; will-change: transform, opacity; font-weight: 800; }
+  .accent-text .dyn-clip { margin: 0 4px; }
+  /* make the cycling word visible with the same gradient as accent-text */
+  .accent-text .dyn-word { background: linear-gradient(135deg, #a855f7 0%, #22d3ee 50%, #ec4899 100%); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; font-size: inherit; line-height: inherit; display: inline-block; z-index: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    .dyn-word { transition: none !important; }
+  }
+
+  .sub { color: var(--text-1); font-size: 17px; max-width: 600px; margin: 0 auto 48px; line-height: 1.6; }
+
+  .search { width: 100%; max-width: 720px; margin: 0 auto; position: relative; }
+  .search-box { position: relative; display: flex; align-items: center; padding: 6px; border-radius: 22px; border: 1px solid var(--border-strong); background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(var(--blur-strong)) saturate(180%); box-shadow: var(--shadow-1), inset 0 1px 0 rgba(255,255,255,0.06); transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease; overflow: hidden; }
+  .search-box::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(168, 85, 247, 0.15) 60deg, transparent 120deg); opacity: 0; transition: opacity .4s ease; pointer-events: none; animation: rotate 8s linear infinite; }
+  @keyframes rotate { to { transform: rotate(360deg); } }
+  .search-box:focus-within { border-color: rgba(168, 85, 247, 0.6); box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.12), 0 20px 60px rgba(168, 85, 247, 0.2), inset 0 1px 0 rgba(255,255,255,0.08); transform: translateY(-1px); }
+  .search-box:focus-within::after { opacity: 1; }
+
+  .search-box svg.search-ico { margin-left: 18px; color: var(--text-2); flex-shrink: 0; transition: color .3s ease; z-index: 2; }
+  .search-box:focus-within svg.search-ico { color: var(--accent); }
+
+  .search-box input { flex: 1; background: transparent; border: none; outline: none; padding: 18px 16px; color: var(--text-0); font-size: 16px; font-family: inherit; letter-spacing: -0.01em; z-index: 2; position: relative; }
+  .search-box input::placeholder { color: var(--text-3); transition: color .3s ease; }
+  .search-box:focus-within input::placeholder { color: var(--text-2); }
+
+  .search-icon-btn { width: 44px; height: 44px; border-radius: 14px; border: none; background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%); color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(168, 85, 247, 0.4), inset 0 1px 0 rgba(255,255,255,0.25); transition: transform .2s ease, box-shadow .2s ease; flex-shrink: 0; z-index: 2; position: relative; overflow: hidden; }
+  .search-icon-btn:hover { transform: scale(1.05); box-shadow: 0 12px 32px rgba(168, 85, 247, 0.5), inset 0 1px 0 rgba(255,255,255,0.25); }
+  .search-icon-btn:active { transform: scale(0.98); }
+
+  .autocomplete { position: absolute; top: calc(100% + 12px); left: 0; right: 0; border-radius: var(--radius-lg); border: 1px solid var(--border-strong); background: rgba(10, 10, 15, 0.85); backdrop-filter: blur(var(--blur-strong)) saturate(180%); box-shadow: var(--shadow-2); padding: 8px; display: none; z-index: 50; overflow: hidden; max-height: 480px; overflow-y: auto; }
+  .autocomplete.open { display: block; animation: fadeDown .25s cubic-bezier(.2,.7,.2,1); }
+  .autocomplete-header { padding: 8px 12px 12px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-3); font-weight: 600; border-bottom: 1px solid var(--border); margin-bottom: 4px; }
+  .autocomplete-item { padding: 12px; border-radius: 10px; cursor: pointer; transition: background .15s ease; display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; }
+  .autocomplete-item:hover { background: var(--surface-strong); }
+  .autocomplete-item .domain-sugg { font-size: 14px; font-weight: 500; color: var(--text-0); letter-spacing: -0.01em; }
+  .autocomplete-item .domain-sugg .tld { color: var(--text-2); font-weight: 400; }
+  .autocomplete-item .ext-pricing { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
+  .autocomplete-item .ext-price-main { font-size: 13px; color: var(--text-0); font-weight: 600; }
+  .autocomplete-item .ext-price-range { font-size: 10px; color: var(--text-3); }
+  .autocomplete-item .ext-badge { padding: 2px 8px; border-radius: 999px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; margin-top: 2px; }
+  .autocomplete-item .ext-badge.popular { background: rgba(168, 85, 247, 0.15); color: #c4b5fd; }
+  .autocomplete-item .ext-badge.trending { background: rgba(34, 211, 238, 0.15); color: #67e8f9; }
+  .autocomplete-item .ext-badge.premium { background: rgba(236, 72, 153, 0.15); color: #f9a8d4; }
+
+  .hint { margin-top: 14px; font-size: 12px; color: var(--text-2); display: flex; align-items: center; justify-content: center; gap: 6px; }
+  .hint code { padding: 2px 6px; border-radius: 6px; background: var(--surface); border: 1px solid var(--border); color: var(--text-1); font-size: 11px; font-family: 'SF Mono', Monaco, monospace; }
+
+  .tld-section { width: 100%; max-width: 1200px; margin-top: 120px; padding: 0 24px; position: relative; }
+  .section-header { text-align: center; margin-bottom: 48px; }
+  .section-eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); backdrop-filter: blur(var(--blur)); font-size: 11px; color: var(--text-1); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
+  .section-title { font-size: clamp(32px, 5vw, 52px); font-weight: 700; letter-spacing: -0.035em; margin-bottom: 14px; background: linear-gradient(180deg, #ffffff 0%, #71717a 100%); -webkit-background-clip: text; background-clip: text; color: transparent; line-height: 1.05; }
+  .section-sub { color: var(--text-1); font-size: 15px; max-width: 560px; margin: 0 auto; line-height: 1.6; }
+
+  .tld-tabs { display: flex; justify-content: center; gap: 4px; margin-bottom: 32px; padding: 5px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); backdrop-filter: blur(var(--blur)); width: fit-content; margin-left: auto; margin-right: auto; flex-wrap: wrap; }
+  .tld-tab { padding: 8px 18px; border-radius: 999px; border: none; background: transparent; color: var(--text-2); font-size: 13px; font-weight: 500; cursor: pointer; transition: all .25s ease; font-family: inherit; letter-spacing: -0.01em; }
+  .tld-tab:hover { color: var(--text-0); }
+  .tld-tab.active { background: linear-gradient(180deg, rgba(168, 85, 247, 0.2), rgba(168, 85, 247, 0.08)); color: var(--text-0); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 0 20px rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.3); }
+
+  .tld-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+  .tld-card { position: relative; padding: 20px 18px; border-radius: var(--radius-lg); border: 1px solid var(--border); background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(var(--blur)); cursor: pointer; transition: transform .4s cubic-bezier(.2,.7,.2,1), border-color .3s ease, background .3s ease; overflow: hidden; }
+  .tld-card::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: linear-gradient(135deg, rgba(255,255,255,0.18), transparent 40%, transparent 60%, rgba(255,255,255,0.06)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.6; transition: opacity .3s ease; }
+  .tld-card::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(168, 85, 247, 0.2), transparent 40%); opacity: 0; transition: opacity .3s ease; pointer-events: none; }
+  .tld-card:hover { transform: translateY(-6px); border-color: var(--border-strong); background: rgba(255, 255, 255, 0.04); }
+  .tld-card:hover::before { opacity: 1; }
+  .tld-card:hover::after { opacity: 1; }
+
+  .tld-ext { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 4px; background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%); -webkit-background-clip: text; background-clip: text; color: transparent; position: relative; z-index: 1; }
+  .tld-price { font-size: 13px; color: var(--text-1); font-weight: 500; margin-bottom: 12px; position: relative; z-index: 1; }
+  .tld-price .from { color: var(--text-3); font-size: 11px; margin-right: 4px; }
+  .tld-trend { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-2); position: relative; z-index: 1; }
+  .tld-trend .trend-bar { display: flex; gap: 2px; align-items: flex-end; height: 14px; }
+  .tld-trend .trend-bar span { width: 3px; background: linear-gradient(180deg, var(--accent), var(--accent-2)); border-radius: 1px; transition: height .3s ease; }
+  .tld-trend.up { color: #86efac; }
+  .tld-trend.up .trend-bar span { background: linear-gradient(180deg, #22c55e, #10b981); }
+  .tld-trend.hot { color: #fcd34d; }
+  .tld-trend.hot .trend-bar span { background: linear-gradient(180deg, #f59e0b, #ec4899); }
+
+  .tld-card .quick-add { position: absolute; top: 12px; right: 12px; width: 24px; height: 24px; border-radius: 50%; background: var(--surface-strong); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; opacity: 0; transform: scale(0.8); transition: opacity .2s ease, transform .2s ease, background .2s ease; color: var(--text-0); z-index: 2; }
+  .tld-card:hover .quick-add { opacity: 1; transform: scale(1); }
+  .tld-card .quick-add:hover { background: var(--accent); border-color: var(--accent); }
+
+  .result { width: 100%; max-width: 1000px; margin-top: 48px; display: flex; flex-direction: column; gap: 24px; }
+
+  .card { position: relative; border-radius: var(--radius-xl); border: 1px solid var(--border); background: rgba(255, 255, 255, 0.025); backdrop-filter: blur(var(--blur-strong)) saturate(180%); box-shadow: var(--shadow-1), inset 0 1px 0 rgba(255,255,255,0.05); padding: 28px; overflow: hidden; animation: fadeUp .6s cubic-bezier(.2,.7,.2,1) both; }
+  .card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.08)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  .domain-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; position: relative; z-index: 1; }
+  .domain-name { font-size: 32px; font-weight: 700; letter-spacing: -0.03em; display: flex; align-items: center; gap: 12px; }
+  .status { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 600; border: 1px solid var(--border); }
+  .status.available { background: rgba(34, 197, 94, 0.08); color: #86efac; border-color: rgba(34, 197, 94, 0.3); }
+  .status.registered { background: rgba(239, 68, 68, 0.08); color: #fca5a5; border-color: rgba(239, 68, 68, 0.3); }
+  .status .pulse { width: 7px; height: 7px; border-radius: 50%; }
+  .status.available .pulse { background: var(--success); box-shadow: 0 0 10px var(--success); animation: pulse 2s ease-in-out infinite; }
+  .status.registered .pulse { background: var(--danger); box-shadow: 0 0 10px var(--danger); }
+
+  .pricing-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-2); margin: 28px 0 16px; font-weight: 600; position: relative; z-index: 1; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; position: relative; z-index: 1; }
+  .price-card { position: relative; padding: 20px 14px; border-radius: var(--radius-md); border: 1px solid var(--border); background: rgba(255, 255, 255, 0.025); text-align: center; cursor: pointer; transition: transform .25s ease, border-color .25s ease, background .25s ease; overflow: hidden; }
+  .price-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(168, 85, 247, 0.15), transparent 50%); opacity: 0; transition: opacity .3s ease; }
+  .price-card:hover { transform: translateY(-3px); border-color: var(--border-strong); background: var(--surface-strong); }
+  .price-card:hover::before { opacity: 1; }
+  .price-card.best { border-color: rgba(168, 85, 247, 0.5); background: linear-gradient(180deg, rgba(168, 85, 247, 0.15), rgba(168, 85, 247, 0.04)); box-shadow: 0 0 30px rgba(168, 85, 247, 0.15); }
+  .price-card.best::after { content: "★ Best"; position: absolute; top: -10px; left: 50%; transform: translateX(-50%); padding: 3px 10px; border-radius: 999px; background: linear-gradient(180deg, #a855f7 0%, #7c3aed 100%); font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: white; white-space: nowrap; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4); z-index: 2; }
+  .years { font-size: 13px; color: var(--text-2); margin-bottom: 8px; position: relative; z-index: 1; }
+  .price { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; color: var(--text-0); position: relative; z-index: 1; }
+
+  .cta-row { margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; position: relative; z-index: 1; }
+  .btn-primary { padding: 13px 24px; border-radius: 12px; border: none; background: linear-gradient(180deg, #a855f7 0%, #7c3aed 100%); color: white; font-weight: 600; font-size: 14px; cursor: pointer; box-shadow: 0 8px 24px rgba(168, 85, 247, 0.4), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform .15s ease; position: relative; overflow: hidden; }
+  .btn-primary:hover { transform: translateY(-1px); }
+  .btn-ghost { padding: 13px 24px; border-radius: 12px; border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-0); font-weight: 500; font-size: 14px; cursor: pointer; transition: background .2s ease; }
+  .btn-ghost:hover { background: var(--surface-strong); }
+
+  .suggestions-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-2); margin: 0 0 14px; font-weight: 600; position: relative; z-index: 1; }
+  .suggestions { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; position: relative; z-index: 1; }
+  .sugg-card { position: relative; padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border); background: rgba(255, 255, 255, 0.025); backdrop-filter: blur(var(--blur)); display: flex; align-items: center; justify-content: space-between; gap: 10px; cursor: pointer; transition: transform .3s cubic-bezier(.2,.7,.2,1), border-color .3s ease, background .3s ease; animation: fadeUp .5s cubic-bezier(.2,.7,.2,1) both; overflow: hidden; }
+  .sugg-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(168, 85, 247, 0.15), transparent 50%); opacity: 0; transition: opacity .3s ease; }
+  .sugg-card:hover { transform: translateY(-4px); border-color: var(--border-strong); background: var(--surface-strong); }
+  .sugg-card:hover::before { opacity: 1; }
+  .sugg-card .name { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; word-break: break-all; position: relative; z-index: 1; }
+  .sugg-card .tld { color: var(--text-2); font-weight: 400; }
+  .sugg-card .arrow { color: var(--text-2); transition: transform .2s ease, color .2s ease; flex-shrink: 0; position: relative; z-index: 1; }
+  .sugg-card:hover .arrow { transform: translateX(3px); color: var(--text-0); }
+
+  .loader { display: flex; align-items: center; justify-content: center; padding: 50px; position: relative; }
+  .loader-orb { width: 50px; height: 50px; position: relative; }
+  .loader-orb::before, .loader-orb::after { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 2px solid transparent; }
+  .loader-orb::before { border-top-color: var(--accent); border-right-color: var(--accent); animation: spin 1s linear infinite; }
+  .loader-orb::after { inset: 8px; border-bottom-color: var(--accent-2); border-left-color: var(--accent-2); animation: spin 1.5s linear infinite reverse; }
+  .loader-core { position: absolute; inset: 16px; border-radius: 50%; background: radial-gradient(circle, var(--accent) 0%, transparent 70%); animation: pulseCore 1.5s ease-in-out infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes pulseCore { 0%, 100% { opacity: 0.4; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.1); } }
+
+  .error { padding: 18px 20px; border-radius: var(--radius-md); border: 1px solid rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.06); color: #fca5a5; font-size: 14px; display: flex; align-items: center; gap: 12px; backdrop-filter: blur(var(--blur)); }
+  .error svg { flex-shrink: 0; }
+
+  .cli-section { width: 100%; max-width: 1000px; margin-top: 120px; }
+  .cli-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .cli-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-2); font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  .cli-title::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--success); box-shadow: 0 0 8px var(--success); animation: pulse 2s ease-in-out infinite; }
+  .cli-controls { display: flex; gap: 8px; }
+  .cli-btn { padding: 5px 10px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface); color: var(--text-2); font-size: 11px; cursor: pointer; transition: all .2s ease; }
+  .cli-btn:hover { background: var(--surface-strong); color: var(--text-0); }
+
+  .terminal { border-radius: var(--radius-lg); border: 1px solid var(--border-strong); background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(var(--blur-strong)) saturate(180%); box-shadow: var(--shadow-2), inset 0 1px 0 rgba(255,255,255,0.04); overflow: hidden; position: relative; }
+  .terminal-bar { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); background: rgba(255, 255, 255, 0.02); }
+  .terminal-dot { width: 11px; height: 11px; border-radius: 50%; }
+  .terminal-dot.red { background: #ff5f57; }
+  .terminal-dot.yellow { background: #febc2e; }
+  .terminal-dot.green { background: #28c840; }
+  .terminal-title { flex: 1; text-align: center; font-size: 12px; color: var(--text-2); font-family: 'SF Mono', Monaco, monospace; }
+  .terminal-body { padding: 20px; font-family: 'SF Mono', Monaco, monospace; font-size: 13px; line-height: 1.7; color: #e4e4e7; min-height: 320px; max-height: 420px; overflow-y: auto; white-space: pre-wrap; word-break: break-word; }
+  .terminal-body::-webkit-scrollbar { width: 6px; }
+  .terminal-body::-webkit-scrollbar-track { background: transparent; }
+  .terminal-body::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+  .t-prompt { color: #a855f7; }
+  .t-cmd { color: #22d3ee; }
+  .t-out { color: #a1a1aa; }
+  .t-success { color: #86efac; }
+  .t-error { color: #fca5a5; }
+  .t-warn { color: #fcd34d; }
+  .t-info { color: #93c5fd; }
+  .t-key { color: #f472b6; }
+  .t-str { color: #fbbf24; }
+  .t-num { color: #c084fc; }
+  .t-cursor { display: inline-block; width: 8px; height: 14px; background: var(--accent); animation: blink 1s step-end infinite; vertical-align: middle; margin-left: 2px; box-shadow: 0 0 8px var(--accent); }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .features-section { width: 100%; max-width: 1200px; margin-top: 120px; padding: 0 24px; }
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .feature-card { position: relative; padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--border); background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(var(--blur)); transition: transform .4s cubic-bezier(.2,.7,.2,1), border-color .3s ease, background .3s ease; overflow: hidden; }
+  .feature-card::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent 40%, transparent 60%, rgba(255,255,255,0.05)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.6; transition: opacity .3s ease; }
+  .feature-card::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(168, 85, 247, 0.12), transparent 40%); opacity: 0; transition: opacity .3s ease; pointer-events: none; }
+  .feature-card:hover { transform: translateY(-6px); border-color: var(--border-strong); background: var(--surface-strong); }
+  .feature-card:hover::before { opacity: 1; }
+  .feature-card:hover::after { opacity: 1; }
+  .feature-icon { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(34, 211, 238, 0.1)); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; color: var(--accent); position: relative; z-index: 1; }
+  .feature-title { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; position: relative; z-index: 1; }
+  .feature-desc { font-size: 14px; color: var(--text-1); line-height: 1.6; position: relative; z-index: 1; }
+
+  .stats-section { width: 100%; max-width: 1200px; margin-top: 120px; padding: 40px 24px; border-radius: var(--radius-xl); border: 1px solid var(--border); background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(var(--blur)); display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; text-align: center; position: relative; overflow: hidden; }
+  .stats-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top, rgba(168, 85, 247, 0.08), transparent 60%); pointer-events: none; }
+  .stat-value { font-size: 44px; font-weight: 700; letter-spacing: -0.03em; background: linear-gradient(135deg, #a855f7 0%, #22d3ee 100%); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 6px; position: relative; z-index: 1; }
+  .stat-label { font-size: 13px; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.1em; position: relative; z-index: 1; }
+
+  /* ===== Sci-Fi Chat Widget ===== */
+  .chat-widget { position: fixed; bottom: 24px; right: 24px; z-index: 200; }
+  .chat-fab { width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(168, 85, 247, 0.4); background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(34, 211, 238, 0.15)); backdrop-filter: blur(20px); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 40px rgba(168, 85, 247, 0.4), inset 0 1px 0 rgba(255,255,255,0.2); transition: transform .3s ease, box-shadow .3s ease; position: relative; overflow: hidden; }
+  .chat-fab::before { content: ''; position: absolute; inset: -2px; border-radius: 50%; background: conic-gradient(from 0deg, transparent, rgba(168, 85, 247, 0.6), transparent, rgba(34, 211, 238, 0.6), transparent); animation: rotate 4s linear infinite; z-index: -1; opacity: 0.5; }
+  .chat-fab::after { content: ''; position: absolute; inset: 2px; border-radius: 50%; background: linear-gradient(135deg, rgba(10, 10, 20, 0.9), rgba(20, 10, 40, 0.9)); z-index: -1; }
+  .chat-fab:hover { transform: scale(1.08); box-shadow: 0 14px 50px rgba(168, 85, 247, 0.55), inset 0 1px 0 rgba(255,255,255,0.25); }
+  .chat-fab svg { width: 26px; height: 26px; color: #c4b5fd; position: relative; z-index: 1; filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6)); }
+  .chat-fab .pulse-ring { position: absolute; inset: -4px; border-radius: 50%; border: 2px solid rgba(168, 85, 247, 0.5); animation: pulseRing 2s ease-out infinite; }
+  @keyframes pulseRing { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+
+  .chat-panel { position: absolute; bottom: 80px; right: 0; width: 360px; max-width: calc(100vw - 48px); border-radius: var(--radius-lg); border: 1px solid var(--border-strong); background: rgba(10, 10, 20, 0.85); backdrop-filter: blur(var(--blur-strong)) saturate(180%); box-shadow: var(--shadow-2); overflow: hidden; display: none; animation: fadeUp .3s cubic-bezier(.2,.7,.2,1); }
+  .chat-panel.open { display: block; }
+  .chat-panel::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), transparent 40%, transparent 60%, rgba(34, 211, 238, 0.2)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+  .chat-header { padding: 16px 18px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; position: relative; }
+  .chat-avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #a855f7, #22d3ee); display: flex; align-items: center; justify-content: center; position: relative; box-shadow: 0 0 20px rgba(168, 85, 247, 0.5); }
+  .chat-avatar::before { content: ''; position: absolute; inset: -3px; border-radius: 50%; border: 1px solid rgba(168, 85, 247, 0.4); animation: pulseRing 2.5s ease-out infinite; }
+  .chat-avatar svg { width: 18px; height: 18px; color: white; }
+  .chat-header-info { flex: 1; }
+  .chat-header-title { font-size: 14px; font-weight: 600; color: var(--text-0); display: flex; align-items: center; gap: 6px; }
+  .chat-header-title .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--success); box-shadow: 0 0 8px var(--success); animation: pulse 2s ease-in-out infinite; }
+  .chat-header-sub { font-size: 11px; color: var(--text-2); margin-top: 2px; }
+  .chat-close { width: 28px; height: 28px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text-2); transition: all .2s ease; }
+  .chat-close:hover { background: var(--surface-strong); color: var(--text-0); }
+
+  .chat-body { padding: 18px; min-height: 280px; max-height: 380px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; position: relative; }
+  .chat-body::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top, rgba(168, 85, 247, 0.05), transparent 60%); pointer-events: none; }
+  .chat-msg { max-width: 85%; padding: 10px 14px; border-radius: 14px; font-size: 13px; line-height: 1.5; position: relative; z-index: 1; animation: fadeUp .4s cubic-bezier(.2,.7,.2,1); }
+  .chat-msg.bot { background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.2); color: var(--text-1); align-self: flex-start; border-bottom-left-radius: 4px; }
+  .chat-msg.user { background: linear-gradient(135deg, rgba(34, 211, 238, 0.15), rgba(168, 85, 247, 0.15)); border: 1px solid rgba(34, 211, 238, 0.2); color: var(--text-0); align-self: flex-end; border-bottom-right-radius: 4px; }
+  .chat-typing { display: flex; gap: 4px; padding: 12px 14px; background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 14px; border-bottom-left-radius: 4px; align-self: flex-start; width: fit-content; }
+  .chat-typing span { width: 6px; height: 6px; border-radius: 50%; background: #c4b5fd; animation: typingBounce 1.2s ease-in-out infinite; }
+  .chat-typing span:nth-child(2) { animation-delay: 0.15s; }
+  .chat-typing span:nth-child(3) { animation-delay: 0.3s; }
+  @keyframes typingBounce { 0%, 60%, 100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-6px); opacity: 1; } }
+
+  .chat-input-wrap { padding: 12px; border-top: 1px solid var(--border); display: flex; gap: 8px; align-items: center; background: rgba(0, 0, 0, 0.3); }
+  .chat-input { flex: 1; padding: 10px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text-0); font-size: 13px; font-family: inherit; outline: none; transition: border-color .2s ease; }
+  .chat-input:focus { border-color: rgba(168, 85, 247, 0.5); }
+  .chat-input::placeholder { color: var(--text-3); }
+  .chat-send { width: 36px; height: 36px; border-radius: 50%; border: none; background: linear-gradient(135deg, #a855f7, #7c3aed); color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4); transition: transform .2s ease; flex-shrink: 0; }
+  .chat-send:hover { transform: scale(1.05); }
+  .chat-send:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  footer { margin-top: 140px; padding: 60px 32px 30px; border-top: 1px solid var(--border); background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(var(--blur)); position: relative; z-index: 2; }
+  .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .footer-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; margin-bottom: 14px; }
+  .footer-desc { color: var(--text-2); font-size: 13px; line-height: 1.7; max-width: 320px; }
+  .footer-col-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-0); font-weight: 600; margin-bottom: 16px; }
+  .footer-col a { display: block; color: var(--text-2); font-size: 13px; text-decoration: none; padding: 5px 0; transition: color .2s ease; }
+  .footer-col a:hover { color: var(--text-0); }
+  .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: var(--text-3); font-size: 12px; }
+  .footer-socials { display: flex; gap: 10px; }
+  .footer-socials a { width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); display: flex; align-items: center; justify-content: center; color: var(--text-2); transition: all .2s ease; }
+  .footer-socials a:hover { background: var(--surface-strong); color: var(--text-0); border-color: var(--border-strong); }
+
+  @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 720px) {
+    header.nav { padding: 14px 18px; flex-wrap: wrap; }
+    .nav-center { display: none; }
+    .nav-right { gap: 6px; }
+    .selector { padding: 6px 10px; font-size: 11px; }
+    main { padding: 50px 16px 60px; }
+    .card { padding: 22px; }
+    .domain-name { font-size: 22px; }
+    .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    .stats-section { padding: 30px 20px; }
+    .stat-value { font-size: 32px; }
+    .tld-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+    .chat-panel { width: calc(100vw - 48px); }
+  }
+  @media (max-width: 480px) { .selector .label { display: none; } }
+</style>
+</head>
+<body>
+  <div class="cursor-light primary" id="cursorPrimary"></div>
+  <div class="cursor-light secondary" id="cursorSecondary"></div>
+  <div class="ambient">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+  <canvas id="particles"></canvas>
+  <div class="grain"></div>
+
+  <div class="shell">
+    <header class="nav">
+      <div class="brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <circle cx="5" cy="5" r="1.5"/><circle cx="19" cy="5" r="1.5"/>
+            <circle cx="5" cy="19" r="1.5"/><circle cx="19" cy="19" r="1.5"/>
+            <line x1="7" y1="7" x2="10" y2="10"/><line x1="17" y1="7" x2="14" y2="10"/>
+            <line x1="7" y1="17" x2="10" y2="14"/><line x1="17" y1="17" x2="14" y2="14"/>
+          </svg>
+        </div>
+        <span class="brand-text">Reseller Hub</span>
+      </div>
+
+      <nav class="nav-center">
+        <a href="#search" data-i18n="nav.domains">Domains</a>
+        <a href="#tld" data-i18n="nav.pricing">Extensions</a>
+        <a href="#cli" data-i18n="nav.transfer">API Console</a>
+        <a href="#stats" data-i18n="nav.docs">Docs</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="selector" id="regionSelector">
+          <span class="flag" id="regionFlag">🇺🇸</span>
+          <span class="label" id="regionLabel">US</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+          <div class="dropdown" id="regionDropdown"></div>
+        </div>
+        <!-- currency selector removed (redundant with region) -->
+        <div class="selector" id="langSelector">
+          <span class="lang-icon" id="langIcon" style="display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M2 12h20M12 2v20"/></svg>
+            <span id="langLabel">EN</span>
+          </span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+          <div class="dropdown" id="langDropdown"></div>
+        </div>
+        <button class="nav-cta" data-i18n="nav.signin">Sign in</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="search">
+        <div class="eyebrow"><span class="dot"></span> <span data-i18n="hero.eyebrow">Live registry lookup</span></div>
+        <h1>
+          <span data-i18n="hero.title1">Claim a name that</span><br/>
+          <span class="accent-text" data-i18n-html="hero.title2">
+            <span class="dyn-clip" aria-hidden="false"><span class="dyn-word">moves</span></span> as fast as you do.
+          </span>
+        </h1>
+        <p class="sub" data-i18n="hero.sub">Search across hundreds of top-level domains with real-time availability, transparent pricing, and instant registration.</p>
+
+        <div class="search">
+          <div class="search-box" id="searchBox">
+            <svg class="search-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input id="domainInput" type="text" data-i18n-placeholder="search.placeholder" placeholder="Find your next domain — e.g. nebula" autocomplete="off" spellcheck="false" />
+            <button class="search-icon-btn" id="searchBtn" aria-label="Search">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+            <!-- quick price button removed -->
+          </div>
+          <div class="autocomplete" id="autocomplete"></div>
+          <div class="hint"><span data-i18n="search.hint">Press</span> <code>Enter</code> <span data-i18n="search.hint2">or tap the icon to check availability.</span></div>
+        </div>
+      </section>
+
+      <script id="dynamic-headline-script">
+      (function(){
+        const WORDS = ["moves","races","evolves","sprints","scales","grows","adapts","launches","innovates"];
+        function initDynamicHeadline(){
+          try{
+            // find accent element
+            const accent = document.querySelector('.hero .accent-text');
+            if(!accent) return;
+            let clip = accent.querySelector('.dyn-clip');
+            // if the dyn-clip was removed by translations/snapshots, recreate it
+            if(!clip){
+              // attempt to preserve trailing text after the dynamic word if present
+              const trailing = accent.textContent.replace(/^\s*\S+\s*/, '');
+              accent.innerHTML = '';
+              clip = document.createElement('span');
+              clip.className = 'dyn-clip';
+              clip.setAttribute('aria-hidden','false');
+              const w = document.createElement('span');
+              w.className = 'dyn-word';
+              w.textContent = WORDS[0];
+              clip.appendChild(w);
+              accent.appendChild(clip);
+              accent.appendChild(document.createTextNode(' ' + (trailing || 'as fast as you do.')));
+            }
+            // clear previous interval if any
+            if(window.__dynamicHeadlineInterval){ clearInterval(window.__dynamicHeadlineInterval); window.__dynamicHeadlineInterval = null; }
+            // ensure styling
+            clip.style.overflow = 'hidden';
+            clip.style.display = 'inline-block';
+            clip.innerHTML = clip.innerHTML || `<span class="dyn-word">${WORDS[0]}</span>`;
+            let idx = WORDS.indexOf(clip.textContent.trim()) + 1;
+            if(!idx || idx <= 0) idx = 1;
+            const first = clip.querySelector('.dyn-word');
+            // lock height to current word to avoid reflow
+            function recalcHeight(){
+              const h = (first && first.getBoundingClientRect().height) || parseFloat(window.getComputedStyle(accent).lineHeight) || 20;
+              clip.style.height = h + 'px';
+            }
+            recalcHeight();
+            window.addEventListener('resize', recalcHeight, {passive:true});
+            function showNext(){
+              const old = clip.querySelector('.dyn-word');
+              const next = document.createElement('span');
+              next.className = 'dyn-word';
+              next.textContent = WORDS[idx];
+              next.style.transform = 'translateY(100%)';
+              next.style.opacity = '0';
+              clip.appendChild(next);
+              requestAnimationFrame(()=>{
+                if(old){ old.style.transform = 'translateY(-100%)'; old.style.opacity = '0'; }
+                next.style.transform = 'translateY(0)'; next.style.opacity = '1';
+              });
+              setTimeout(()=>{ if(old) old.remove(); }, 600);
+              idx = (idx + 1) % WORDS.length;
+            }
+            // start interval
+            window.__dynamicHeadlineInterval = setInterval(showNext, 2400);
+            console.debug('dynamic headline started');
+          }catch(e){ console.error('dynamic headline init', e); }
+        }
+        // watch for DOM replacements (translations/snapshots) and re-init if needed
+        function ensureObserver(){
+          if(window.__dynamicHeadlineObserver) return;
+          const root = document.body || document.documentElement;
+          if(!root) return;
+          const obs = new MutationObserver((mutations)=>{
+            // simple debounce: if any mutation occurs, try re-init
+            for(const m of mutations){
+              if(m.type === 'childList' || m.type === 'subtree'){
+                const clip = document.querySelector('.hero .accent-text .dyn-clip');
+                if(!clip || !clip.querySelector('.dyn-word') || !window.__dynamicHeadlineInterval){
+                  console.debug('dynamic headline: DOM changed, re-initializing');
+                  // small timeout to allow DOM replacement to settle
+                  setTimeout(()=>{ try{ initDynamicHeadline(); }catch(e){console.error(e);} }, 50);
+                  break;
+                }
+              }
+            }
+          });
+          obs.observe(root, { childList: true, subtree: true });
+          window.__dynamicHeadlineObserver = obs;
+        }
+        window.initDynamicHeadline = initDynamicHeadline;
+        // ensure observer is present
+        if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ()=>{ initDynamicHeadline(); ensureObserver(); });
+        else { initDynamicHeadline(); ensureObserver(); }
+      })();
+      </script>
+
+      <section class="result" id="result"></section>
+
+      <section class="tld-section reveal" id="tld">
+        <div class="section-header">
+          <div class="section-eyebrow">✦ <span data-i18n="tld.eyebrow">Domain Extensions</span></div>
+          <h2 class="section-title" data-i18n="tld.title">Find your perfect extension</h2>
+          <p class="section-sub" data-i18n="tld.sub">From classic .com to cutting-edge .ai — discover extensions that match your brand.</p>
+        </div>
+        <div class="tld-tabs" id="tldTabs">
+          <button class="tld-tab active" data-cat="popular" data-i18n="tld.popular">Popular</button>
+          <button class="tld-tab" data-cat="new" data-i18n="tld.new">New</button>
+          <button class="tld-tab" data-cat="premium" data-i18n="tld.premium">Premium</button>
+          <button class="tld-tab" data-cat="country" data-i18n="tld.country">Country Code</button>
+        </div>
+        <div class="tld-grid" id="tldGrid"></div>
+      </section>
+
+      <section class="cli-section reveal" id="cli">
+        <div class="cli-header">
+          <div class="cli-title"><span data-i18n="cli.title">Live API Console</span></div>
+          <div class="cli-controls">
+            <button class="cli-btn" id="cliClear" data-i18n="cli.clear">Clear</button>
+            <button class="cli-btn" id="cliDemo" data-i18n="cli.demo">Run Demo</button>
+          </div>
+        </div>
+        <div class="terminal">
+          <div class="terminal-bar">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot yellow"></div>
+            <div class="terminal-dot green"></div>
+            <div class="terminal-title">reseller-hub — api-console</div>
+          </div>
+          <div class="terminal-body" id="terminalBody"></div>
+        </div>
+      </section>
+
+      <section class="features-section reveal" id="features">
+        <div class="section-header">
+          <div class="section-eyebrow">⚡ <span data-i18n="feat.eyebrow">Platform</span></div>
+          <h2 class="section-title" data-i18n="features.title">Built for serious resellers</h2>
+          <p class="section-sub" data-i18n="features.sub">Everything you need to run a world-class domain business, in one platform.</p>
+        </div>
+        <div class="features-grid" id="featuresGrid"></div>
+      </section>
+
+      <section class="stats-section reveal" id="stats">
+        <div><div class="stat-value">500+</div><div class="stat-label" data-i18n="stats.tlds">TLDs Supported</div></div>
+        <div><div class="stat-value">99.9%</div><div class="stat-label" data-i18n="stats.uptime">API Uptime</div></div>
+        <div><div class="stat-value">24/7</div><div class="stat-label" data-i18n="stats.support">Support</div></div>
+        <div><div class="stat-value">10M+</div><div class="stat-label" data-i18n="stats.domains">Domains Managed</div></div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <div class="brand-logo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <circle cx="5" cy="5" r="1.5"/><circle cx="19" cy="5" r="1.5"/>
+                <circle cx="5" cy="19" r="1.5"/><circle cx="19" cy="19" r="1.5"/>
+                <line x1="7" y1="7" x2="10" y2="10"/><line x1="17" y1="7" x2="14" y2="10"/>
+                <line x1="7" y1="17" x2="10" y2="14"/><line x1="17" y1="17" x2="14" y2="14"/>
+              </svg>
+            </div>
+            <span class="brand-text">Reseller Hub</span>
+          </div>
+          <p class="footer-desc" data-i18n="footer.desc">The premium domain registrar platform built for modern resellers. Fast, reliable, and beautifully designed.</p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title" data-i18n="footer.product">Product</div>
+          <a href="#" data-i18n="footer.domains">Domains</a>
+          <a href="#" data-i18n="footer.transfer">Transfer</a>
+          <a href="#" data-i18n="footer.bulk">Bulk Search</a>
+          <a href="#" data-i18n="footer.api">API</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title" data-i18n="footer.company">Company</div>
+          <a href="#" data-i18n="footer.about">About</a>
+          <a href="#" data-i18n="footer.careers">Careers</a>
+          <a href="#" data-i18n="footer.blog">Blog</a>
+          <a href="#" data-i18n="footer.press">Press</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title" data-i18n="footer.support">Support</div>
+          <a href="#" data-i18n="footer.help">Help Center</a>
+          <a href="#" data-i18n="footer.contact">Contact</a>
+          <a href="#" data-i18n="footer.status">Status</a>
+          <a href="#" data-i18n="footer.terms">Terms</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Reseller Hub. <span data-i18n="footer.rights">All rights reserved.</span></div>
+        <div class="footer-socials">
+          <a href="#" aria-label="Twitter"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="GitHub"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Sci-Fi Chat Widget -->
+  <div class="chat-widget">
+    <div class="chat-panel" id="chatPanel">
+      <div class="chat-header">
+        <div class="chat-avatar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a5 5 0 0 1 5 5v3a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/>
+            <path d="M3 13a9 9 0 0 0 18 0"/>
+            <line x1="12" y1="18" x2="12" y2="22"/>
+          </svg>
+        </div>
+        <div class="chat-header-info">
+          <div class="chat-header-title">NEXUS AI <span class="live-dot"></span></div>
+          <div class="chat-header-sub">Domain Intelligence Assistant</div>
+        </div>
+        <div class="chat-close" id="chatClose">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </div>
+      </div>
+      <div class="chat-body" id="chatBody">
+        <div class="chat-msg bot">👋 Hello! I'm NEXUS, your AI-powered domain intelligence assistant. Ask me anything about domains, branding, or market trends.</div>
+        <div class="chat-msg bot">Try: <em>"Best TLD for a tech startup"</em> or <em>"Value of premium .com domains"</em></div>
+      </div>
+      <div class="chat-input-wrap">
+        <input class="chat-input" id="chatInput" type="text" placeholder="Ask NEXUS anything..." autocomplete="off" />
+        <button class="chat-send" id="chatSend" aria-label="Send">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="chat-fab" id="chatFab">
+      <span class="pulse-ring"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        <circle cx="9" cy="10" r="1" fill="currentColor"/>
+        <circle cx="12" cy="10" r="1" fill="currentColor"/>
+        <circle cx="15" cy="10" r="1" fill="currentColor"/>
+      </svg>
+    </div>
+  </div>
+
+<!-- Load configuration from config.js -->
+<script src="config.js"></script>
+
+<script>
+(() => {
+  'use strict';
+
+  // ====== CONFIG ======
+  // Load configuration from external config.js file
+  // The API_KEY is now managed via environment variables for security
+  const CONFIG = window.APP_CONFIG || {
+    API_KEY: localStorage.getItem('apiKey') || 'TrSl7LCkCKvZkKz',
+    MARKUP: 0.20,
+    ENDPOINTS: {
+      availability: 'https://api.connectreseller.com/ConnectReseller/ESHOP/checkdomainavailable',
+      pricing:      'https://api.connectreseller.com/ConnectReseller/ESHOP/checkDomainPrice',
+      suggestions:  'https://api.connectreseller.com/ConnectReseller/ESHOP/domainSuggestion'
+    },
+    YEARS: [1, 2, 3, 5, 10]
+  };
+
+  // ====== TLD DATA ======
+  const TLD_DATA = {
+    popular: [
+      { ext: '.com',    price: 12.99, trend: 'stable', bars: [6,8,7,9,8] },
+      { ext: '.net',    price: 14.99, trend: 'stable', bars: [5,6,6,7,6] },
+      { ext: '.org',    price: 13.99, trend: 'stable', bars: [7,6,7,6,7] },
+      { ext: '.co',     price: 29.99, trend: 'up',     bars: [4,6,7,8,9] },
+      { ext: '.info',   price: 19.99, trend: 'stable', bars: [5,5,6,5,6] }
+    ],
+    new: [
+      { ext: '.io',     price: 39.99, trend: 'hot',    bars: [5,7,9,10,12] },
+      { ext: '.ai',     price: 79.99, trend: 'hot',    bars: [3,6,9,12,15] },
+      { ext: '.dev',    price: 14.99, trend: 'up',     bars: [4,6,8,9,10] },
+      { ext: '.app',    price: 16.99, trend: 'up',     bars: [5,7,8,9,10] },
+      { ext: '.xyz',    price: 11.99, trend: 'up',     bars: [6,7,8,9,10] }
+    ],
+    premium: [
+      { ext: '.luxury', price: 149.99, trend: 'hot',   bars: [3,5,8,11,14] },
+      { ext: '.design', price: 49.99,  trend: 'up',    bars: [5,7,9,10,12] },
+      { ext: '.studio', price: 29.99,  trend: 'up',    bars: [4,6,8,10,11] },
+      { ext: '.agency', price: 34.99,  trend: 'up',    bars: [5,7,8,10,11] },
+      { ext: '.tech',   price: 44.99,  trend: 'hot',   bars: [4,7,10,13,15] }
+    ],
+    country: [
+      { ext: '.in',  price: 9.99,  trend: 'up', bars: [5,6,7,8,9] },
+      { ext: '.uk',  price: 11.99, trend: 'stable', bars: [7,7,8,7,8] },
+      { ext: '.de',  price: 10.99, trend: 'stable', bars: [8,8,8,8,8] },
+      { ext: '.fr',  price: 12.99, trend: 'stable', bars: [6,7,7,7,7] },
+      { ext: '.jp',  price: 24.99, trend: 'up', bars: [5,6,7,8,9] },
+      { ext: '.cn',  price: 19.99, trend: 'up', bars: [4,6,7,8,10] },
+      { ext: '.ca',  price: 14.99, trend: 'stable', bars: [6,6,7,7,7] },
+      { ext: '.au',  price: 22.99, trend: 'up', bars: [5,6,7,8,9] },
+      { ext: '.br',  price: 17.99, trend: 'up', bars: [4,5,7,8,9] },
+      { ext: '.ru',  price: 12.99, trend: 'stable', bars: [6,6,7,6,7] }
+    ]
+  };
+
+  // ====== REGIONS ======
+  const REGIONS = [
+    { code: 'US', name: 'United States', flag: '🇺🇸', currency: 'USD', lang: 'en' },
+    { code: 'CN', name: 'China',         flag: '🇨🇳', currency: 'CNY', lang: 'zh' },
+    { code: 'IN', name: 'India',         flag: '🇮🇳', currency: 'INR', lang: 'hi' },
+    { code: 'JP', name: 'Japan',         flag: '🇯🇵', currency: 'JPY', lang: 'ja' },
+    { code: 'DE', name: 'Germany',       flag: '🇩🇪', currency: 'EUR', lang: 'de' },
+    { code: 'GB', name: 'United Kingdom',flag: '🇬🇧', currency: 'GBP', lang: 'en' },
+    { code: 'FR', name: 'France',        flag: '🇫🇷', currency: 'EUR', lang: 'fr' },
+    { code: 'BR', name: 'Brazil',        flag: '🇧🇷', currency: 'BRL', lang: 'pt' },
+    { code: 'CA', name: 'Canada',        flag: '🇨🇦', currency: 'CAD', lang: 'en' },
+    { code: 'AU', name: 'Australia',     flag: '🇦🇺', currency: 'AUD', lang: 'en' }
+  ];
+
+  const CURRENCIES = {
+    USD: { symbol: '$',  rate: 1,      name: 'US Dollar',     flag: '🇺🇸' },
+    CNY: { symbol: '¥',  rate: 7.24,   name: 'Chinese Yuan',  flag: '🇨🇳' },
+    INR: { symbol: '₹',  rate: 83.12,  name: 'Indian Rupee',  flag: '🇮🇳' },
+    JPY: { symbol: '¥',  rate: 157.3,  name: 'Japanese Yen',  flag: '🇯🇵' },
+    EUR: { symbol: '€',  rate: 0.92,   name: 'Euro',          flag: '🇪🇺' },
+    GBP: { symbol: '£',  rate: 0.79,   name: 'British Pound', flag: '🇬🇧' },
+    BRL: { symbol: 'R$', rate: 5.12,   name: 'Brazilian Real',flag: '🇧🇷' },
+    CAD: { symbol: 'C$', rate: 1.37,   name: 'Canadian Dollar',flag:'🇨🇦' },
+    AUD: { symbol: 'A$', rate: 1.53,   name: 'Australian Dollar',flag:'🇦🇺' }
+  };
+
+  const LANGUAGES = {
+    en: { name: 'English',    flag: '🇬🇧' },
+    zh: { name: '中文',       flag: '🇨🇳' },
+    hi: { name: 'हिन्दी',     flag: '🇮🇳' },
+    ja: { name: '日本語',     flag: '🇯🇵' },
+    de: { name: 'Deutsch',    flag: '🇩🇪' },
+    fr: { name: 'Français',   flag: '🇫🇷' },
+    pt: { name: 'Português',  flag: '🇧🇷' },
+    es: { name: 'Español',    flag: '🇪🇸' },
+    ru: { name: 'Русский',    flag: '🇷🇺' },
+    ar: { name: 'العربية',    flag: '🇸🇦' }
+  };
+
+  const T = {
+    en: {
+      'nav.domains':'Domains','nav.pricing':'Extensions','nav.transfer':'API Console','nav.docs':'Docs','nav.signin':'Sign in',
+      'hero.eyebrow':'Live registry lookup','hero.title1':'Claim a name that','hero.title2':'moves as fast as you do.',
+      'hero.sub':'Search across hundreds of top-level domains with real-time availability, transparent pricing, and instant registration.',
+      'search.placeholder':'Find your next domain — e.g. nebula',
+      'search.hint':'Press','search.hint2':'or tap the icon to check availability.',
+      'status.available':'Available','status.registered':'Registered',
+      'pricing.title':'Multi-year pricing','cta.cart':'Add to cart','cta.checkout':'Checkout',
+      'sugg.title':'Suggested alternatives','sugg.empty':'No alternative suggestions were returned.',
+      'sugg.note':'This domain is already taken. Here are 5 available alternatives you might like.',
+      'tld.eyebrow':'Domain Extensions','tld.title':'Find your perfect extension','tld.sub':'From classic .com to cutting-edge .ai — discover extensions that match your brand.',
+      'tld.popular':'Popular','tld.new':'New','tld.premium':'Premium','tld.country':'Country Code',
+      'tld.from':'from','tld.trending':'Trending','tld.hot':'Hot','tld.stable':'Stable',
+      'cli.title':'Live API Console','cli.clear':'Clear','cli.demo':'Run Demo',
+      'feat.eyebrow':'Platform',
+      'features.title':'Built for serious resellers','features.sub':'Everything you need to run a world-class domain business, in one platform.',
+      'stats.tlds':'TLDs Supported','stats.uptime':'API Uptime','stats.support':'Support','stats.domains':'Domains Managed',
+      'footer.desc':'The premium domain registrar platform built for modern resellers. Fast, reliable, and beautifully designed.',
+      'footer.product':'Product','footer.domains':'Domains','footer.transfer':'Transfer','footer.bulk':'Bulk Search','footer.api':'API',
+      'footer.company':'Company','footer.about':'About','footer.careers':'Careers','footer.blog':'Blog','footer.press':'Press',
+      'footer.support':'Support','footer.help':'Help Center','footer.contact':'Contact','footer.status':'Status','footer.terms':'Terms',
+      'footer.rights':'All rights reserved.',
+      'error.generic':'Something went wrong. Please try again in a moment.',
+      'error.network':'We could not reach the registry. Please check your connection.',
+      'error.invalid':'The domain name appears to be invalid. Please try again.',
+      'error.auth':'API authentication failed. Please check your API key and IP whitelist.',
+      'feat.1.title':'Lightning Fast API','feat.1.desc':'Sub-200ms response times across all endpoints with 99.9% uptime SLA.',
+      'feat.2.title':'500+ TLDs','feat.2.desc':'Access to every major generic and country-code top-level domain worldwide.',
+      'feat.3.title':'AI Brand Engine','feat.3.desc':'Smart name generation and brand scoring powered by neural networks.',
+      'feat.4.title':'Global CDN','feat.4.desc':'Edge-located infrastructure across 40+ regions for blazing fast lookups.',
+      'feat.5.title':'White Label','feat.5.desc':'Fully customizable branding with your logo, colors, and domain.',
+      'feat.6.title':'24/7 Support','feat.6.desc':'Dedicated account managers and round-the-clock technical assistance.',
+      'year':'year','years':'years'
+    },
+    'es': {
+      '#search': `
+        <section class="hero" id="search">
+          <div class="eyebrow" data-i18n-snapshot>✦ Búsqueda de registro en vivo</div>
+          <h1 data-i18n-snapshot><span>Reclama un nombre</span><br/><span class="accent-text">tan rápido como tú.</span></h1>
+          <p class="sub" data-i18n-snapshot>Busca entre cientos de TLD en tiempo real con disponibilidad, precios transparentes y registro instantáneo.</p>
+          <div class="search"><div class="search-box" id="searchBox"><input id="domainInput" type="text" placeholder="Encuentra tu dominio — ej. nebula" autocomplete="off" spellcheck="false" /><button class="search-icon-btn" id="searchBtn">Buscar</button></div></div>
+        </section>
+      `,
+      '#tld': `
+        <section class="tld-section reveal" id="tld"><div class="section-header"><div class="section-eyebrow">✦ Extensiones de dominio</div><h2 class="section-title">Encuentra la extensión perfecta</h2><p class="section-sub">Desde el clásico .com hasta el .ai más moderno — descubre extensiones que encajen con tu marca.</p></div><div class="tld-tabs" id="tldTabs"></div><div class="tld-grid" id="tldGrid"></div></section>
+      `,
+      '#cli': `<section class="cli-section reveal" id="cli"><div class="cli-header"><div class="cli-title">Consola API en vivo</div><div class="cli-controls"><button class="cli-btn" id="cliClear">Borrar</button><button class="cli-btn" id="cliDemo">Demo</button></div></div><div class="terminal"><div class="terminal-body" id="terminalBody"></div></div></section>`,
+      '#features': `<section class="features-section reveal" id="features"><div class="section-header"><div class="section-eyebrow">⚡ Plataforma</div><h2 class="section-title">Construido para revendedores serios</h2><p class="section-sub">Todo lo que necesitas para gestionar un negocio de dominios de clase mundial, en una sola plataforma.</p></div><div class="features-grid" id="featuresGrid"></div></section>`,
+      '#stats': `<section class="stats-section reveal" id="stats"><div><div class="stat-value">500+</div><div class="stat-label">TLDs compatibles</div></div><div><div class="stat-value">99.9%</div><div class="stat-label">Disponibilidad API</div></div><div><div class="stat-value">24/7</div><div class="stat-label">Soporte</div></div><div><div class="stat-value">10M+</div><div class="stat-label">Dominios gestionados</div></div></section>`,
+      'footer': `<footer><div class="footer-grid"><div><div class="footer-brand"><div class="brand-logo"></div><span class="brand-text">Reseller Hub</span></div><p class="footer-desc">La plataforma registradora premium para revendedores modernos. Rápida, fiable y con un diseño excelente.</p></div><div class="footer-col"><div class="footer-col-title">Producto</div><a href="#">Dominios</a></div><div class="footer-col"><div class="footer-col-title">Empresa</div><a href="#">Sobre</a></div><div class="footer-col"><div class="footer-col-title">Soporte</div><a href="#">Ayuda</a></div></div><div class="footer-bottom">© 2026 Reseller Hub. Todos los derechos reservados.</div></footer>`
+    },
+    'ru': {
+      '#search': `<section class="hero" id="search"><div class="eyebrow" data-i18n-snapshot>✦ Поиск в реестре в реальном времени</div><h1 data-i18n-snapshot><span>Занимайте имя</span><br/><span class="accent-text">так быстро, как вы.</span></h1><p class="sub" data-i18n-snapshot>Ищите сотни TLD в реальном времени с доступностью, прозрачными ценами и мгновенной регистрацией.</p><div class="search"><div class="search-box" id="searchBox"><input id="domainInput" type="text" placeholder="Найдите домен — например nebula" autocomplete="off" spellcheck="false" /><button class="search-icon-btn" id="searchBtn">Поиск</button></div></div></section>`,
+      '#tld': `<section class="tld-section reveal" id="tld"><div class="section-header"><div class="section-eyebrow">✦ Расширения доменов</div><h2 class="section-title">Найдите идеальное расширение</h2><p class="section-sub">От классического .com до современного .ai — найдите расширения, подходящие вашему бренду.</p></div><div class="tld-tabs" id="tldTabs"></div><div class="tld-grid" id="tldGrid"></div></section>`,
+      '#cli': `<section class="cli-section reveal" id="cli"><div class="cli-header"><div class="cli-title">Консоль API в реальном времени</div><div class="cli-controls"><button class="cli-btn" id="cliClear">Очистить</button><button class="cli-btn" id="cliDemo">Демо</button></div></div><div class="terminal"><div class="terminal-body" id="terminalBody"></div></div></section>`,
+      '#features': `<section class="features-section reveal" id="features"><div class="section-header"><div class="section-eyebrow">⚡ Платформа</div><h2 class="section-title">Создано для серьёзных реселлеров</h2><p class="section-sub">Всё, что нужно для управления бизнесом доменов мирового класса, на одной платформе.</p></div><div class="features-grid" id="featuresGrid"></div></section>`,
+      '#stats': `<section class="stats-section reveal" id="stats"><div><div class="stat-value">500+</div><div class="stat-label">Поддерживаемые TLD</div></div><div><div class="stat-value">99.9%</div><div class="stat-label">Время работы API</div></div><div><div class="stat-value">24/7</div><div class="stat-label">Поддержка</div></div><div><div class="stat-value">10M+</div><div class="stat-label">Управляемые домены</div></div></section>`,
+      'footer': `<footer><div class="footer-grid"><div><div class="footer-brand"><div class="brand-logo"></div><span class="brand-text">Reseller Hub</span></div><p class="footer-desc">Премиальная платформа регистратора доменов для современных реселлеров. Быстро, надежно и красиво.</p></div><div class="footer-col"><div class="footer-col-title">Продукт</div><a href="#">Домены</a></div><div class="footer-col"><div class="footer-col-title">Компания</div><a href="#">О нас</a></div><div class="footer-col"><div class="footer-col-title">Поддержка</div><a href="#">Помощь</a></div></div><div class="footer-bottom">© 2026 Reseller Hub. Все права защищены.</div></footer>`
+    },
+    'ar': {
+      '#search': `<section class="hero" id="search"><div class="eyebrow" data-i18n-snapshot>✦ البحث في السجل المباشر</div><h1 data-i18n-snapshot dir="rtl"><span>احصل على اسم</span><br/><span class="accent-text">بسُرعة مثلك.</span></h1><p class="sub" data-i18n-snapshot dir="rtl">ابحث في مئات نطاقات المستوى الأعلى في الوقت الفعلي مع التوافر، والأسعار الشفافة، والتسجيل الفوري.</p><div class="search"><div class="search-box" id="searchBox"><input id="domainInput" type="text" placeholder="ابحث عن نطاقك — مثل nebula" autocomplete="off" spellcheck="false" /><button class="search-icon-btn" id="searchBtn">بحث</button></div></div></section>`,
+      '#tld': `<section class="tld-section reveal" id="tld" dir="rtl"><div class="section-header"><div class="section-eyebrow">✦ امتدادات النطاق</div><h2 class="section-title">اعثر على الامتداد المناسب</h2><p class="section-sub">من .com الكلاسيكي إلى .ai المتقدم — اكتشف الامتدادات التي تتناسب مع علامتك التجارية.</p></div><div class="tld-tabs" id="tldTabs"></div><div class="tld-grid" id="tldGrid"></div></section>`,
+      '#cli': `<section class="cli-section reveal" id="cli"><div class="cli-header"><div class="cli-title">وحدة تحكم API المباشرة</div><div class="cli-controls"><button class="cli-btn" id="cliClear">مسح</button><button class="cli-btn" id="cliDemo">عرض توضيحي</button></div></div><div class="terminal"><div class="terminal-body" id="terminalBody"></div></div></section>`,
+      '#features': `<section class="features-section reveal" id="features"><div class="section-header"><div class="section-eyebrow">⚡ المنصة</div><h2 class="section-title">مصممة لإعادة البيع الاحترافية</h2><p class="section-sub">كل ما تحتاجه لتشغيل عمل نطاقات من الطراز العالمي، في منصة واحدة.</p></div><div class="features-grid" id="featuresGrid"></div></section>`,
+      '#stats': `<section class="stats-section reveal" id="stats"><div><div class="stat-value">500+</div><div class="stat-label">النطاقات المدعومة</div></div><div><div class="stat-value">99.9%</div><div class="stat-label">توفر API</div></div><div><div class="stat-value">24/7</div><div class="stat-label">الدعم</div></div><div><div class="stat-value">10M+</div><div class="stat-label">النطاقات المُدارة</div></div></section>`,
+      'footer': `<footer dir="rtl"><div class="footer-grid"><div><div class="footer-brand"><div class="brand-logo"></div><span class="brand-text">Reseller Hub</span></div><p class="footer-desc">منصة تسجيل النطاقات المتميزة لإعادة البيع الحديثة. سريعة وموثوقة ومصممة بشكل جميل.</p></div><div class="footer-col"><div class="footer-col-title">المنتج</div><a href="#">النطاقات</a></div><div class="footer-col"><div class="footer-col-title">الشركة</div><a href="#">حول</a></div><div class="footer-col"><div class="footer-col-title">الدعم</div><a href="#">المساعدة</a></div></div><div class="footer-bottom">© 2026 Reseller Hub. كل الحقوق محفوظة.</div></footer>`
+    }
+  };
+  ['zh','hi','ja','de','fr','pt','es','ru','ar'].forEach(l => { if (!T[l]) T[l] = T.en; });
+
+  const FEATURES = [
+    { icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>', titleKey: 'feat.1.title', descKey: 'feat.1.desc' },
+    { icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>', titleKey: 'feat.2.title', descKey: 'feat.2.desc' },
+    { icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5v3a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M3 13a9 9 0 0 0 18 0"/><line x1="12" y1="18" x2="12" y2="22"/></svg>', titleKey: 'feat.3.title', descKey: 'feat.3.desc' },
+    { icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"/></svg>', titleKey: 'feat.4.title', descKey: 'feat.4.desc' },
+    { icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>', titleKey: 'feat.5.title', descKey: 'feat.5.desc' },
+    { icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>', titleKey: 'feat.6.title', descKey: 'feat.6.desc' }
+  ];
+
+  const state = {
+    region: REGIONS[0],
+    currency: 'USD',
+    lang: 'en',
+    recentSearches: [],
+    tldCategory: 'popular',
+    lastBasePrice: null
+  };
+
+  // Pre-rendered page snapshots for full-page translations.
+  // Populate these with translated HTML for the main selectors below.
+  // Example usage: add translated markup for '#search' or 'footer' keys.
+  const TRANSLATED_SNAPSHOTS = {
+    'zh': {
+      '#search': `
+        <section class="hero" id="search">
+          <div class="eyebrow" data-i18n-snapshot>✦ 实时注册查询</div>
+          <h1 data-i18n-snapshot><span>申请一个你能立即拥有的名字</span><br/><span class="accent-text">极速查询，即刻注册</span></h1>
+          <p class="sub" data-i18n-snapshot>在数百个顶级域名中搜索，提供实时可用性、透明定价与即时注册。</p>
+          <div class="search">
+            <div class="search-box" id="searchBox">
+              <svg class="search-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input id="domainInput" type="text" placeholder="查找域名 — 例如 nebula" autocomplete="off" spellcheck="false" />
+              <button class="search-icon-btn" id="searchBtn" aria-label="搜索"> 
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </div>
+        </section>
+      `,
+      '#tld': `
+        <section class="tld-section reveal" id="tld">
+          <div class="section-header">
+            <div class="section-eyebrow">✦ 域名后缀</div>
+            <h2 class="section-title">找到合适的后缀</h2>
+            <p class="section-sub">从经典的 .com 到前沿的 .ai — 发现适合您品牌的扩展名。</p>
+          </div>
+          <div class="tld-tabs" id="tldTabs"></div>
+          <div class="tld-grid" id="tldGrid"></div>
+        </section>
+      `,
+      '#cli': `
+        <section class="cli-section reveal" id="cli">
+          <div class="cli-header">
+            <div class="cli-title">实时 API 控制台</div>
+            <div class="cli-controls">
+              <button class="cli-btn" id="cliClear">清除</button>
+              <button class="cli-btn" id="cliDemo">演示</button>
+            </div>
+          </div>
+          <div class="terminal">
+            <div class="terminal-bar">
+              <div class="terminal-dot red"></div>
+              <div class="terminal-dot yellow"></div>
+              <div class="terminal-dot green"></div>
+              <div class="terminal-title">reseller-hub — api 控制台</div>
+            </div>
+            <div class="terminal-body" id="terminalBody"></div>
+          </div>
+        </section>
+      `,
+      '#features': `
+        <section class="features-section reveal" id="features">
+          <div class="section-header">
+            <div class="section-eyebrow">⚡ 平台</div>
+            <h2 class="section-title">为专业经销商打造</h2>
+            <p class="section-sub">运行世界一流域名业务所需的一切，尽在一处。</p>
+          </div>
+          <div class="features-grid" id="featuresGrid"></div>
+        </section>
+      `,
+      '#stats': `
+        <section class="stats-section reveal" id="stats">
+          <div><div class="stat-value">500+</div><div class="stat-label">支持的 TLD</div></div>
+          <div><div class="stat-value">99.9%</div><div class="stat-label">API 在线率</div></div>
+          <div><div class="stat-value">24/7</div><div class="stat-label">支持</div></div>
+          <div><div class="stat-value">10M+</div><div class="stat-label">管理域名</div></div>
+        </section>
+      `,
+      'footer': `
+        <footer>
+          <div class="footer-grid">
+            <div>
+              <div class="footer-brand">
+                <div class="brand-logo"></div>
+                <span class="brand-text">Reseller Hub</span>
+              </div>
+              <p class="footer-desc">面向现代经销商的高级域名注册平台。快速、可靠且设计精美。</p>
+            </div>
+            <div class="footer-col">
+              <div class="footer-col-title">产品</div>
+              <a href="#">域名</a>
+              <a href="#">转移</a>
+              <a href="#">批量搜索</a>
+              <a href="#">API</a>
+            </div>
+            <div class="footer-col">
+              <div class="footer-col-title">公司</div>
+              <a href="#">关于</a>
+              <a href="#">招聘</a>
+              <a href="#">博客</a>
+              <a href="#">新闻</a>
+            </div>
+            <div class="footer-col">
+              <div class="footer-col-title">支持</div>
+              <a href="#">帮助中心</a>
+              <a href="#">联系</a>
+              <a href="#">状态</a>
+              <a href="#">条款</a>
+            </div>
+          </div>
+          <div class="footer-bottom">© 2026 Reseller Hub. 版权所有。</div>
+        </footer>
+      `
+    },
+    'hi': {
+      '#search': `
+        <section class="hero" id="search">
+          <div class="eyebrow" data-i18n-snapshot>✦ लाइव रजिस्ट्रि लुकअप</div>
+          <h1 data-i18n-snapshot><span>एक ऐसा नाम हासिल करें</span><br/><span class="accent-text">जो आपकी गति के साथ चलता है।</span></h1>
+          <p class="sub" data-i18n-snapshot>रियल-टाइम उपलब्धता, पारदर्शी मूल्य और तत्काल पंजीकरण के साथ सैकड़ों टॉप-लेवल डोमेन खोजें।</p>
+          <div class="search">
+            <div class="search-box" id="searchBox">
+              <input id="domainInput" type="text" placeholder="अपना डोमेन खोजें — उदाहरण के लिए nebula" autocomplete="off" spellcheck="false" />
+              <button class="search-icon-btn" id="searchBtn" aria-label="खोज">Search</button>
+            </div>
+          </div>
+        </section>
+      `,
+      '#tld': `
+        <section class="tld-section reveal" id="tld">
+          <div class="section-header">
+            <div class="section-eyebrow">✦ डोमेन एक्सटेंशन्स</div>
+            <h2 class="section-title">अपना फ़िटिंग एक्सटेंशन खोजें</h2>
+            <p class="section-sub">क्लासिक .com से लेकर .ai तक — अपने ब्रांड के अनुरूप एक्सटेंशन्स खोजें।</p>
+          </div>
+          <div class="tld-tabs" id="tldTabs"></div>
+          <div class="tld-grid" id="tldGrid"></div>
+        </section>
+      `,
+      '#cli': `
+        <section class="cli-section reveal" id="cli">
+          <div class="cli-header">
+            <div class="cli-title">लाइव API कंसोल</div>
+            <div class="cli-controls">
+              <button class="cli-btn" id="cliClear">साफ़ करें</button>
+              <button class="cli-btn" id="cliDemo">डेमो चलाएँ</button>
+            </div>
+          </div>
+          <div class="terminal"><div class="terminal-body" id="terminalBody"></div></div>
+        </section>
+      `,
+      '#features': `
+        <section class="features-section reveal" id="features">
+          <div class="section-header">
+            <div class="section-eyebrow">⚡ प्लेटफ़ॉर्म</div>
+            <h2 class="section-title">गंभीर रीसेलर्स के लिए बनाया गया</h2>
+            <p class="section-sub">वर्ल्ड‑क्लास डोमेन बिजनेस चलाने के लिए आवश्यक सब कुछ, एक प्लेटफ़ॉर्म में।</p>
+          </div>
+          <div class="features-grid" id="featuresGrid"></div>
+        </section>
+      `,
+      '#stats': `
+        <section class="stats-section reveal" id="stats">
+          <div><div class="stat-value">500+</div><div class="stat-label">समर्थित TLD</div></div>
+          <div><div class="stat-value">99.9%</div><div class="stat-label">API अपटाइम</div></div>
+          <div><div class="stat-value">24/7</div><div class="stat-label">सपोर्ट</div></div>
+          <div><div class="stat-value">10M+</div><div class="stat-label">डोमेन्स प्रबंधित</div></div>
+        </section>
+      `,
+      'footer': `
+        <footer>
+          <div class="footer-grid">
+            <div>
+              <div class="footer-brand"><div class="brand-logo"></div><span class="brand-text">Reseller Hub</span></div>
+              <p class="footer-desc">आधुनिक रीसेलर्स के लिए प्रीमियम डोमेन रजिस्ट्रार प्लेटफ़ॉर्म। तेज, विश्वसनीय, और सुंदर डिजाइन।</p>
+            </div>
+            <div class="footer-col"><div class="footer-col-title">उत्पाद</div><a href="#">डोमेन्स</a><a href="#">ट्रांसफर</a><a href="#">बुल्क खोज</a><a href="#">API</a></div>
+            <div class="footer-col"><div class="footer-col-title">कंपनी</div><a href="#">कंपनी</a></div>
+            <div class="footer-col"><div class="footer-col-title">सहायता</div><a href="#">हेल्प</a></div>
+          </div>
+          <div class="footer-bottom">© 2026 Reseller Hub. सर्वाधिकार सुरक्षित।</div>
+        </footer>
+      `
+    },
+    'ja': {
+      '#search': `
+        <section class="hero" id="search">
+          <div class="eyebrow" data-i18n-snapshot>✦ レジストリのリアルタイム検索</div>
+          <h1 data-i18n-snapshot><span>あなたのスピードに合わせた名前を取得</span><br/><span class="accent-text">高速検索ですぐに登録</span></h1>
+          <p class="sub" data-i18n-snapshot>数百のTLDをリアルタイムで検索、可用性、価格、即時登録を提供します。</p>
+          <div class="search"><div class="search-box" id="searchBox"><input id="domainInput" type="text" placeholder="ドメインを探す — 例: nebula" autocomplete="off" spellcheck="false" /><button class="search-icon-btn" id="searchBtn">検索</button></div></div>
+        </section>
+      `,
+      '#tld': `
+        <section class="tld-section reveal" id="tld">
+          <div class="section-header"><div class="section-eyebrow">✦ ドメイン拡張</div><h2 class="section-title">ぴったりの拡張子を見つける</h2><p class="section-sub">古典的な .com から先端の .ai まで、ブランドに合う拡張子を発見しましょう。</p></div><div class="tld-tabs" id="tldTabs"></div><div class="tld-grid" id="tldGrid"></div>
+        </section>
+      `,
+      '#cli': `
+        <section class="cli-section reveal" id="cli">
+          <div class="cli-header"><div class="cli-title">ライブ API コンソール</div><div class="cli-controls"><button class="cli-btn" id="cliClear">クリア</button><button class="cli-btn" id="cliDemo">デモ</button></div></div><div class="terminal"><div class="terminal-body" id="terminalBody"></div></div>
+        </section>
+      `,
+      '#features': `
+        <section class="features-section reveal" id="features"><div class="section-header"><div class="section-eyebrow">⚡ プラットフォーム</div><h2 class="section-title">真剣なリセラーのために構築</h2><p class="section-sub">ワールドクラスのドメインビジネスを運営するために必要なすべてを一つに。</p></div><div class="features-grid" id="featuresGrid"></div></section>
+      `,
+      '#stats': `
+        <section class="stats-section reveal" id="stats"><div><div class="stat-value">500+</div><div class="stat-label">対応TLD</div></div><div><div class="stat-value">99.9%</div><div class="stat-label">API稼働率</div></div><div><div class="stat-value">24/7</div><div class="stat-label">サポート</div></div><div><div class="stat-value">10M+</div><div class="stat-label">管理ドメイン</div></div></section>
+      `,
+      'footer': `
+        <footer><div class="footer-grid"><div><div class="footer-brand"><div class="brand-logo"></div><span class="brand-text">Reseller Hub</span></div><p class="footer-desc">モダンなリセラー向けのプレミアムドメイン登録プラットフォーム。高速、信頼、そして美しいデザイン。</p></div><div class="footer-col"><div class="footer-col-title">製品</div><a href="#">ドメイン</a><a href="#">転送</a></div><div class="footer-col"><div class="footer-col-title">会社</div><a href="#">会社情報</a></div><div class="footer-col"><div class="footer-col-title">サポート</div><a href="#">ヘルプ</a></div></div><div class="footer-bottom">© 2026 Reseller Hub. 全著作権所有。</div></footer>
+      `
+    },
+    'de': {
+      '#search': `
+        <section class="hero" id="search">
+          <div class="eyebrow" data-i18n-snapshot>✦ Live-Registry-Suche</div>
+          <h1 data-i18n-snapshot><span>Sichern Sie einen Namen</span><br/><span class="accent-text">so schnell wie Sie sind.</span></h1>
+          <p class="sub" data-i18n-snapshot>Durchsuchen Sie Hunderte von Top-Level-Domains mit Echtzeit-Verfügbarkeit, transparenten Preisen und sofortiger Registrierung.</p>
+          <div class="search"><div class="search-box" id="searchBox"><input id="domainInput" type="text" placeholder="Suchen Sie Ihre Domain — z.B. nebula" autocomplete="off" spellcheck="false" /><button class="search-icon-btn" id="searchBtn">Suchen</button></div></div>
+        </section>
+      `,
+      '#tld': `
+        <section class="tld-section reveal" id="tld"><div class="section-header"><div class="section-eyebrow">✦ Domain-Erweiterungen</div><h2 class="section-title">Finden Sie Ihre perfekte Erweiterung</h2><p class="section-sub">Von klassischen .com bis zu modernen .ai — finden Sie Erweiterungen, die zu Ihrer Marke passen.</p></div><div class="tld-tabs" id="tldTabs"></div><div class="tld-grid" id="tldGrid"></div></section>
+      `,
+      '#cli': `
+        <section class="cli-section reveal" id="cli"><div class="cli-header"><div class="cli-title">Live API Konsole</div><div class="cli-controls"><button class="cli-btn" id="cliClear">Leeren</button><button class="cli-btn" id="cliDemo">Demo</button></div></div><div class="terminal"><div class="terminal-body" id="terminalBody"></div></div></section>
+      `,
+      '#features': `
+        <section class="features-section reveal" id="features"><div class="section-header"><div class="section-eyebrow">⚡ Plattform</div><h2 class="section-title">Für ernsthafte Reseller gebaut</h2><p class="section-sub">Alles, was Sie benötigen, um ein erstklassiges Domain-Geschäft zu betreiben, in einer Plattform.</p></div><div class="features-grid" id="featuresGrid"></div></section>
+      `,
+      '#stats': `
+        <section class="stats-section reveal" id="stats"><div><div class="stat-value">500+</div><div class="stat-label">Unterstützte TLDs</div></div><div><div class="stat-value">99.9%</div><div class="stat-label">API-Verfügbarkeit</div></div><div><div class="stat-value">24/7</div><div class="stat-label">Support</div></div><div><div class="stat-value">10M+</div><div class="stat-label">Verwaltete Domains</div></div></section>
+      `,
+      'footer': `
+        <footer><div class="footer-grid"><div><div class="footer-brand"><div class="brand-logo"></div><span class="brand-text">Reseller Hub</span></div><p class="footer-desc">Die Premium-Domain-Registrar-Plattform für moderne Reseller. Schnell, zuverlässig und gut gestaltet.</p></div><div class="footer-col"><div class="footer-col-title">Produkt</div><a href="#">Domains</a></div><div class="footer-col"><div class="footer-col-title">Unternehmen</div><a href="#">Über</a></div><div class="footer-col"><div class="footer-col-title">Support</div><a href="#">Hilfe</a></div></div><div class="footer-bottom">© 2026 Reseller Hub. Alle Rechte vorbehalten.</div></footer>
+      `
+    },
+    'fr': {
+      '#search': `
+        <section class="hero" id="search">
+          <div class="eyebrow" data-i18n-snapshot>✦ Recherche d'annuaire en direct</div>
+          <h1 data-i18n-snapshot><span>Réservez un nom</span><br/><span class="accent-text">aussi rapide que vous.</span></h1>
+          <p class="sub" data-i18n-snapshot>Recherchez des centaines de TLD en temps réel avec disponibilité, tarification transparente et enregistrement instantané.</p>
+          <div class="search"><div class="search-box" id="searchBox"><input id="domainInput" type="text" placeholder="Trouvez votre domaine — ex. nebula" autocomplete="off" spellcheck="false" /><button class="search-icon-btn" id="searchBtn">Rechercher</button></div></div>
+        </section>
+      `,
+      '#tld': `
+        <section class="tld-section reveal" id="tld"><div class="section-header"><div class="section-eyebrow">✦ Extensions de domaine</div><h2 class="section-title">Trouvez l'extension parfaite</h2><p class="section-sub">Du classique .com aux .ai de pointe — découvrez les extensions adaptées à votre marque.</p></div><div class="tld-tabs" id="tldTabs"></div><div class="tld-grid" id="tldGrid"></div></section>
+      `,
+      '#cli': `
+        <section class="cli-section reveal" id="cli"><div class="cli-header"><div class="cli-title">Console API en direct</div><div class="cli-controls"><button class="cli-btn" id="cliClear">Effacer</button><button class="cli-btn" id="cliDemo">Démo</button></div></div><div class="terminal"><div class="terminal-body" id="terminalBody"></div></div></section>
+      `,
+      '#features': `
+        <section class="features-section reveal" id="features"><div class="section-header"><div class="section-eyebrow">⚡ Plateforme</div><h2 class="section-title">Conçu pour les revendeurs sérieux</h2><p class="section-sub">Tout ce dont vous avez besoin pour gérer une entreprise de domaines de classe mondiale, sur une seule plateforme.</p></div><div class="features-grid" id="featuresGrid"></div></section>
+      `,
+      '#stats': `
+        <section class="stats-section reveal" id="stats"><div><div class="stat-value">500+</div><div class="stat-label">TLD pris en charge</div></div><div><div class="stat-value">99.9%</div><div class="stat-label">Disponibilité API</div></div><div><div class="stat-value">24/7</div><div class="stat-label">Support</div></div><div><div class="stat-value">10M+</div><div class="stat-label">Domaines gérés</div></div></section>
+      `,
+      'footer': `
+        <footer><div class="footer-grid"><div><div class="footer-brand"><div class="brand-logo"></div><span class="brand-text">Reseller Hub</span></div><p class="footer-desc">La plateforme d'enregistrement de domaines premium pour les revendeurs modernes. Rapide, fiable et bien conçue.</p></div><div class="footer-col"><div class="footer-col-title">Produit</div><a href="#">Domaines</a></div><div class="footer-col"><div class="footer-col-title">Entreprise</div><a href="#">À propos</a></div><div class="footer-col"><div class="footer-col-title">Support</div><a href="#">Aide</a></div></div><div class="footer-bottom">© 2026 Reseller Hub. Tous droits réservés.</div></footer>
+      `
+    },
+    'pt': {
+      '#search': `
+        <section class="hero" id="search">
+          <div class="eyebrow" data-i18n-snapshot>✦ Pesquisa de registro em tempo real</div>
+          <h1 data-i18n-snapshot><span>Garanta um nome</span><br/><span class="accent-text">tão rápido quanto você.</span></h1>
+          <p class="sub" data-i18n-snapshot>Pesquise centenas de TLDs em tempo real com disponibilidade, preços transparentes e registro instantâneo.</p>
+          <div class="search"><div class="search-box" id="searchBox"><input id="domainInput" type="text" placeholder="Encontre seu domínio — ex. nebula" autocomplete="off" spellcheck="false" /><button class="search-icon-btn" id="searchBtn">Pesquisar</button></div></div>
+        </section>
+      `,
+      '#tld': `
+        <section class="tld-section reveal" id="tld"><div class="section-header"><div class="section-eyebrow">✦ Extensões de domínio</div><h2 class="section-title">Encontre a extensão perfeita</h2><p class="section-sub">Do clássico .com ao moderno .ai — descubra extensões que combinam com sua marca.</p></div><div class="tld-tabs" id="tldTabs"></div><div class="tld-grid" id="tldGrid"></div></section>
+      `,
+      '#cli': `
+        <section class="cli-section reveal" id="cli"><div class="cli-header"><div class="cli-title">Console API ao vivo</div><div class="cli-controls"><button class="cli-btn" id="cliClear">Limpar</button><button class="cli-btn" id="cliDemo">Demo</button></div></div><div class="terminal"><div class="terminal-body" id="terminalBody"></div></div></section>
+      `,
+      '#features': `
+        <section class="features-section reveal" id="features"><div class="section-header"><div class="section-eyebrow">⚡ Plataforma</div><h2 class="section-title">Construído para revendedores sérios</h2><p class="section-sub">Tudo o que você precisa para executar um negócio de domínios de classe mundial, em uma plataforma.</p></div><div class="features-grid" id="featuresGrid"></div></section>
+      `,
+      '#stats': `
+        <section class="stats-section reveal" id="stats"><div><div class="stat-value">500+</div><div class="stat-label">TLDs suportados</div></div><div><div class="stat-value">99.9%</div><div class="stat-label">Disponibilidade da API</div></div><div><div class="stat-value">24/7</div><div class="stat-label">Suporte</div></div><div><div class="stat-value">10M+</div><div class="stat-label">Domínios gerenciados</div></div></section>
+      `,
+      'footer': `
+        <footer><div class="footer-grid"><div><div class="footer-brand"><div class="brand-logo"></div><span class="brand-text">Reseller Hub</span></div><p class="footer-desc">A plataforma de registro de domínios premium para revendedores modernos. Rápida, confiável e com design elegante.</p></div><div class="footer-col"><div class="footer-col-title">Produto</div><a href="#">Domínios</a></div><div class="footer-col"><div class="footer-col-title">Empresa</div><a href="#">Sobre</a></div><div class="footer-col"><div class="footer-col-title">Suporte</div><a href="#">Ajuda</a></div></div><div class="footer-bottom">© 2026 Reseller Hub. Todos os direitos reservados.</div></footer>
+      `
+    }
+  };
+
+  // Apply a saved snapshot for major sections when a language is selected.
+  function applyPageSnapshot(lang) {
+    try {
+      const snap = TRANSLATED_SNAPSHOTS[lang];
+      if (!snap) { showDebug('no snapshot for ' + lang); return false; }
+      const applied = [];
+      // show snapshot keys for debugging
+      try { showDebug('snapshot keys: ' + Object.keys(snap).join(','), 3000); } catch (e) {}
+      Object.keys(snap).forEach(sel => {
+        try {
+          const el = (sel === 'footer') ? document.querySelector('footer') : document.querySelector(sel);
+          if (!el) return;
+          const html = String(snap[sel] || '').trim();
+          if (!html) return;
+          // Prefer DOM parsing to safely replace content while preserving attributes/classes
+          if (html.startsWith('<')) {
+            const tpl = document.createElement('template');
+            tpl.innerHTML = html;
+            // If snapshot contains a single top-level element that matches the current element tag,
+            // replace the element but merge attributes/classes from the original to avoid breaking CSS/selectors.
+            if (tpl.content.childElementCount === 1 && tpl.content.firstElementChild) {
+              const newEl = tpl.content.firstElementChild;
+              try {
+                // merge attributes from old element that are missing in the new one (skip data-* flags)
+                for (let i = 0; i < el.attributes.length; i++) {
+                  const a = el.attributes[i];
+                  if (!a || !a.name) continue;
+                  if (a.name.startsWith('data-')) continue; // don't preserve internal init flags
+                  if (!newEl.hasAttribute(a.name)) {
+                    newEl.setAttribute(a.name, a.value);
+                  }
+                }
+                // merge class lists so CSS rules depending on original classes aren't lost
+                const oldClasses = (el.getAttribute('class') || '').split(/\s+/).filter(Boolean);
+                const newClasses = (newEl.getAttribute('class') || '').split(/\s+/).filter(Boolean);
+                const merged = Array.from(new Set([...oldClasses, ...newClasses]));
+                if (merged.length) newEl.setAttribute('class', merged.join(' '));
+
+                // Mark new element as snapshot-sourced to avoid later translation overwrites
+                newEl.setAttribute('data-i18n-snapshot', '1');
+                // Replace the element via DOM to avoid string-based outerHTML issues
+                el.parentNode.replaceChild(newEl, el);
+                applied.push(sel);
+              } catch (e) {
+                // fallback: replace innerHTML only
+                try { el.innerHTML = tpl.innerHTML; el.setAttribute('data-i18n-snapshot', '1'); applied.push(sel); } catch (e2) { /* ignore */ }
+              }
+            } else {
+              // multiple top-level nodes or fragments: replace innerHTML of the existing element
+              try { el.innerHTML = tpl.innerHTML; el.setAttribute('data-i18n-snapshot', '1'); applied.push(sel); } catch (e) { /* ignore */ }
+            }
+          } else {
+            // plain string: set innerHTML
+            try { el.innerHTML = html; el.setAttribute('data-i18n-snapshot', '1'); applied.push(sel); } catch (e) { /* ignore */ }
+          }
+        } catch (e) { /* ignore per-section errors */ }
+      });
+      if (applied.length === 0) {
+        try { showDebug('snapshot found but no selectors applied for ' + lang, 4000); } catch (e) {}
+      } else {
+        try { showDebug('snapshot applied for ' + lang + ' -> ' + applied.join(','), 4000); } catch (e) {}
+      }
+      // After inserting snapshot HTML, apply translations so data-i18n attributes get translated
+      try { applyTranslations(); } catch (e) { /* ignore */ }
+      // refresh refs and re-initialize interactive parts inside replaced sections
+      refreshElementRefs();
+      try { reinitAfterSnapshot(applied); } catch (e) { /* ignore */ }
+      // ensure selectors (flag/currency) reflect new state
+      try { updateSelectors(); } catch (e) {}
+      // defensively reattach core handlers after a short delay to ensure DOM is stable
+      try {
+        setTimeout(() => {
+          try { refreshElementRefs(); } catch (e) {}
+          try { attachSearchHandlers(); } catch (e) {}
+          try { setupTLDTabs(); } catch (e) {}
+          try { setupCLI(); } catch (e) {}
+          try { setupChatWidget(); } catch (e) {}
+          try { showDebug('post-snapshot handlers reattached for ' + lang, 1500); } catch (e) {}
+        }, 40);
+      } catch (e) {}
+      showDebug('applied page snapshot: ' + lang);
+      return true;
+    } catch (e) {
+      console.error('applyPageSnapshot error', e);
+      return false;
+    }
+  }
+
+  function reinitAfterSnapshot(appliedSelectors = []) {
+    // refresh element refs
+    refreshElementRefs();
+    // If search was replaced, re-attach search handlers and placeholder typing
+    if (appliedSelectors.includes('#search')) {
+      try { attachSearchHandlers(); } catch (e) {}
+    }
+    // If TLD section replaced, re-render and attach tabs
+    if (appliedSelectors.includes('#tld')) {
+      try { renderTLDs(); setupTLDTabs(); } catch (e) {}
+    }
+    // If CLI replaced, re-attach CLI handlers
+    if (appliedSelectors.includes('#cli')) {
+      try { setupCLI(); } catch (e) {}
+    }
+    // If features replaced, re-render features (translations already applied)
+    if (appliedSelectors.includes('#features')) {
+      try { renderFeatures(); } catch (e) {}
+    }
+    // Chat widget may be inside snapshot; ensure handlers are attached
+    if (appliedSelectors.includes('#chat') || appliedSelectors.includes('#features') || appliedSelectors.includes('footer')) {
+      try { setupChatWidget(); } catch (e) {}
+    }
+  }
+
+  function attachSearchHandlers() {
+    try { showDebug('attachSearchHandlers start input=' + !!input + ' btn=' + !!btn, 2000); } catch (e) {}
+    if (!input || !btn) { refreshElementRefs(); }
+    if (!input || !btn) {
+      try { showDebug('attachSearchHandlers aborted, missing refs', 3000); } catch (e) {}
+      return;
+    }
+    // Always attach if not already attached; if dataset flag exists but handlers lost, reattach
+    if (input.dataset._init === '1' && input._handlersAttached) {
+      try { showDebug('attachSearchHandlers: already initialized', 1000); } catch (e) {}
+      return;
+    }
+    btn.addEventListener('click', runSearch);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        try { if (autocomplete && autocomplete.classList) autocomplete.classList.remove('open'); } catch (e) {}
+        runSearch();
+      }
+      if (e.key === 'Escape') { try { if (autocomplete && autocomplete.classList) autocomplete.classList.remove('open'); } catch (e) {} ; input.blur(); }
+    });
+    input.addEventListener('focus', stopPlaceholderTyping);
+    input.addEventListener('input', stopPlaceholderTyping);
+    input.addEventListener('click', stopPlaceholderTyping);
+    input.dataset._init = '1';
+    input._handlersAttached = true;
+    // ensure placeholder typing restarts if not already
+    try { startPlaceholderTyping(); } catch (e) {}
+    try { showDebug('attachSearchHandlers attached', 1500); } catch (e) {}
+  }
+
+  // Helper to register snapshots from the console for quick editing/testing.
+  window.registerPageSnapshot = function(lang, obj) {
+    TRANSLATED_SNAPSHOTS[lang] = obj;
+    console.info('registered snapshot for', lang);
+  };
+
+  // On-page debug banner (helps when user can't open DevTools)
+  const _dbgBox = (() => {
+    try {
+      const el = document.createElement('div');
+      el.id = 'debugBanner';
+      el.style.cssText = 'position:fixed;left:14px;bottom:14px;z-index:99999;padding:8px 12px;border-radius:10px;background:rgba(0,0,0,0.6);color:#e6e6e9;font-size:12px;border:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(6px);display:none;max-width:320px;word-break:break-word;';
+      document.body.appendChild(el);
+      return el;
+    } catch (e) { return null; }
+  })();
+  function showDebug(msg, timeout = 5000) {
+    try {
+      if (!_dbgBox) return;
+      _dbgBox.textContent = String(msg).slice(0, 1000);
+      _dbgBox.style.display = 'block';
+      if (window._dbgTimer) clearTimeout(window._dbgTimer);
+      window._dbgTimer = setTimeout(() => { if (_dbgBox) _dbgBox.style.display = 'none'; }, timeout);
+    } catch (e) { /* ignore */ }
+  }
+
+  let input = document.getElementById('domainInput');
+  let btn = document.getElementById('searchBtn');
+  let searchBox = document.getElementById('searchBox');
+  let autocomplete = document.getElementById('autocomplete');
+  let result = document.getElementById('result');
+  let cursorPrimary = document.getElementById('cursorPrimary');
+  let cursorSecondary = document.getElementById('cursorSecondary');
+  let terminalBody = document.getElementById('terminalBody');
+
+  function refreshElementRefs() {
+    input = document.getElementById('domainInput');
+    btn = document.getElementById('searchBtn');
+    searchBox = document.getElementById('searchBox');
+    autocomplete = document.getElementById('autocomplete');
+    result = document.getElementById('result');
+    cursorPrimary = document.getElementById('cursorPrimary') || cursorPrimary;
+    cursorSecondary = document.getElementById('cursorSecondary') || cursorSecondary;
+    terminalBody = document.getElementById('terminalBody') || terminalBody;
+  }
+
+  // ====== UTILS ======
+  // Backwards-compatible wrapper: prefer the strict `normalizeDomainInput` but
+  // fall back to the original lightweight behavior when necessary.
+  const normalizeDomain = (raw) => {
+    try {
+      // If our robust normalizer returns a value, use it.
+      const robust = (window.normalizeDomainInput && typeof window.normalizeDomainInput === 'function') ? window.normalizeDomainInput(raw) : null;
+      if (robust) return robust;
+    } catch (e) {
+      // swallow and fall back
+    }
+    // Legacy fallback: simple trimming + remove protocol/www + ensure .com
+    let v = (raw || '').trim().toLowerCase();
+    v = v.replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '');
+    if (!/\.[a-z]{2,}$/i.test(v)) v += '.com';
+    return v;
+  };
+  /**
+   * Robust, pure utility to normalize messy user input into a safe domain string
+   * suitable for backend validation (e.g. "domain.com" or "domain.co.uk").
+   * Returns normalized domain (lowercased) or null if input cannot be salvaged.
+   *
+   * Strategy summary (see inline comments):
+   * - Normalize Unicode and strip invisible/control characters
+   * - Strip surrounding punctuation and protocol prefixes
+   * - Remove paths/query/fragments
+   * - Convert common separators (spaces, commas, underscores) into dots
+   *   - Strip any remaining illegal characters and validate labels per RFC-like rules
+   */
+  function normalizeDomainInput(userInput, { defaultTLD = 'com' } = {}) {
+    if (userInput == null) return null;
+    // 1) Coerce and normalize unicode
+    let s = String(userInput).normalize('NFKC');
+
+    // 2) Trim and remove zero-width / control characters
+    s = s.trim().replace(/[\u200B-\u200F\uFEFF\x00-\x1F\x7F]/g, '');
+
+    // 3) Strip surrounding quotes/brackets users paste accidentally
+    s = s.replace(/^[\s"'“”‘’<>\(\)\[\]]+|[\s"'“”‘’<>\)\]\(]+$/g, '');
+
+    // 4) Remove scheme like 'http://', 'https://', 'ftp://' or stray '://'
+    s = s.replace(/^[a-zA-Z][a-zA-Z0-9+\-.]*:\/\//, '');
+    s = s.replace(/^:\/\//, '');
+
+    // 5) Cut off path/query/fragment parts (keep only host-like portion)
+    s = s.split(/[\/?#]/, 1)[0];
+
+    // 6) Replace common separators/typos with dots: commas, fullwidth comma
+    s = s.replace(/[，,]+/g, '.');
+
+    // 7) Normalize spaced dots and collapse space/underscore sequences to dots
+    // Special-case: if the input contains whitespace and exactly one token already contains a dot
+    // (e.g. `deuyvged uybeiok.com`), it's likely the user pasted a domain with a leading token
+    // that is not a desired subdomain. In that case, concatenate tokens instead of inserting dots,
+    // producing `deuyvgeduybeiok.com` instead of `deuyvged.uybeiok.com`.
+    if (/\s/.test(s)) {
+      const parts = s.split(/\s+/).filter(Boolean);
+      const partsWithDot = parts.filter(p => p.includes('.'));
+      const partsWithoutDot = parts.filter(p => !p.includes('.'));
+      // Only apply the aggressive concatenation heuristic when the non-dot tokens are short.
+      // This avoids turning a legitimate host+domain into an unintended concatenation that
+      // hides a true subdomain (e.g. 'deuyvged uybeiok.com').
+      const SHORT_TOKEN_MAX = 6; // heuristic threshold (chars)
+      const allShort = partsWithoutDot.length > 0 && partsWithoutDot.every(p => p.length <= SHORT_TOKEN_MAX);
+      if (partsWithDot.length >= 1 && partsWithoutDot.length >= 1 && partsWithDot.length === 1 && allShort) {
+        // Join all parts together (remove whitespace) to avoid creating an unintended subdomain
+        s = parts.join('');
+      }
+    }
+    s = s.replace(/\s*\.\s*/g, '.');
+    s = s.replace(/[\s_]+/g, '.');
+
+    // 8) Remove any remaining characters that are not alnum, hyphen, or dot
+    s = s.replace(/[^A-Za-z0-9\-\.]/g, '');
+
+    // 9) Collapse multiple dots and strip leading/trailing dots
+    s = s.replace(/\.{2,}/g, '.');
+    s = s.replace(/^\.+|\.+$/g, '');
+
+    // 10) Remove leading 'www.' if present
+    s = s.replace(/^www\./i, '');
+
+    if (!s) return null;
+
+    // 11) If no dot present, append default TLD
+    if (!s.includes('.')) s = s + '.' + defaultTLD;
+
+    // 12) Validate labels conservatively: 1..63 chars, only alnum/hyphen, no leading/trailing hyphen
+    if (s.length > 253) return null;
+    const labels = s.split('.');
+    const labelRe = /^[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?$/;
+    for (let i = 0; i < labels.length; i++) {
+      const lbl = labels[i];
+      if (!lbl || lbl.length < 1 || lbl.length > 63) return null;
+      if (!labelRe.test(lbl)) return null;
+    }
+
+    // 13) TLD plausibility: last label length 2..63
+    const last = labels[labels.length - 1];
+    if (last.length < 2 || last.length > 63) return null;
+
+    return s.toLowerCase();
+  }
+  // expose for debugging/tests
+  window.normalizeDomainInput = normalizeDomainInput;
+
+  // Quick self-test using the examples provided; results printed to console and summary shown in debug banner
+  (function _runNormalizeDomainInputTests(){
+    try {
+      const tests = [
+        ['chkbfrbu', 'chkbfrbu.com'],
+        ['rbfirub.com', 'rbfirub.com'],
+        ['ubfrburfbu com', 'ubfrburfbu.com'],
+        ['deuyvged uybeiok.com', 'deuyvged.uybeiok.com'],
+        ['nfrffino,com', 'nfrffino.com'],
+        ['://example.com', 'example.com'],
+        ['https://example.com', 'example.com'],
+        ['  example . com  ', 'example.com']
+      ];
+      let ok = 0;
+      tests.forEach(([inp, exp]) => {
+        const out = normalizeDomainInput(inp);
+        const pass = out === exp;
+        if (pass) ok++;
+        console.log('normalizeDomainInput', JSON.stringify(inp), '=>', out, pass ? 'OK' : `FAIL (expected ${exp})`);
+      });
+      try { showDebug('normalizeDomainInput tests: ' + ok + '/' + tests.length, 4000); } catch (e) { /* ignore */ }
+    } catch (e) { console.error('normalizeDomainInput tests error', e); }
+  })();
+  const extractKeyword = (d) => d.split('.')[0];
+  const escapeHtml = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const applyMarkup = (p) => {
+    if (p === null || p === undefined) return null;
+    // allow numeric strings with currency symbols/commas
+    if (typeof p === 'string') {
+      const cleaned = p.replace(/[^0-9.\-]+/g, '');
+      const n = Number(cleaned);
+      return isFinite(n) ? n * (1 + CONFIG.MARKUP) : null;
+    }
+    const n = Number(p);
+    return isFinite(n) ? n * (1 + CONFIG.MARKUP) : null;
+  };
+  const t = (key) => (T[state.lang] && T[state.lang][key]) || T.en[key] || key;
+
+  // Mask API key for display in CLI (keep original for requests)
+  function maskKey(k) {
+    if (!k) return '';
+    if (k.length <= 6) return '••••••';
+    const start = k.slice(0, 2);
+    const end = k.slice(-2);
+    return start + '•'.repeat(Math.max(0, k.length - 4)) + end;
+  }
+
+  const formatCurrency = (usdAmount) => {
+    if (!isFinite(usdAmount)) return '—';
+    const curr = CURRENCIES[state.currency];
+    const converted = usdAmount * curr.rate;
+    const decimals = (state.currency === 'JPY') ? 0 : 2;
+    return curr.symbol + converted.toLocaleString(state.lang === 'en' ? 'en-US' : state.lang, {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
+    });
+  };
+
+  // ====== CURSOR LIGHTS ======
+  function setupCursorLights() {
+    let targetX = window.innerWidth / 2, targetY = window.innerHeight / 2;
+    let primaryX = targetX, primaryY = targetY;
+    let secondaryX = targetX, secondaryY = targetY;
+
+    window.addEventListener('mousemove', (e) => {
+      targetX = e.clientX;
+      targetY = e.clientY;
+    });
+
+    function animate() {
+      primaryX += (targetX - primaryX) * 0.08;
+      primaryY += (targetY - primaryY) * 0.08;
+      secondaryX += (targetX - secondaryX) * 0.04;
+      secondaryY += (targetY - secondaryY) * 0.04;
+      cursorPrimary.style.left = primaryX + 'px';
+      cursorPrimary.style.top = primaryY + 'px';
+      cursorSecondary.style.left = secondaryX + 'px';
+      cursorSecondary.style.top = secondaryY + 'px';
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    if ('ontouchstart' in window) {
+      cursorPrimary.style.display = 'none';
+      cursorSecondary.style.display = 'none';
+    }
+  }
+
+  // ====== PARTICLES ======
+  function setupParticles() {
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let w, h;
+
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const count = Math.min(60, Math.floor(window.innerWidth / 25));
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * w, y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.2, vy: (Math.random() - 0.5) * 0.2,
+        r: Math.random() * 1.5 + 0.5, o: Math.random() * 0.4 + 0.1
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      particles.forEach(p => {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0) p.x = w; if (p.x > w) p.x = 0;
+        if (p.y < 0) p.y = h; if (p.y > h) p.y = 0;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(168, 85, 247, ${p.o})`;
+        ctx.fill();
+      });
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(168, 85, 247, ${0.08 * (1 - dist / 120)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  function setupScrollReveal() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }
+
+  function setupCardHover() {
+    document.addEventListener('mousemove', (e) => {
+      document.querySelectorAll('.tld-card, .feature-card, .price-card, .sugg-card').forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+          card.style.setProperty('--mx', (x / rect.width * 100) + '%');
+          card.style.setProperty('--my', (y / rect.height * 100) + '%');
+        }
+      });
+    });
+  }
+
+  // ====== I18N ======
+  function applyTranslations() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      // Skip elements that came from a pre-rendered snapshot (they already contain translated HTML)
+      if (el.hasAttribute('data-i18n-snapshot')) return;
+      const key = el.getAttribute('data-i18n');
+      const translation = t(key);
+      // If an element explicitly opts-in to HTML translations, set innerHTML.
+      if (el.hasAttribute('data-i18n-html')) {
+        el.innerHTML = translation;
+      } else {
+        el.textContent = translation;
+      }
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      const translation = t(key);
+      if (el.hasAttribute('data-i18n-placeholder-html')) {
+        el.placeholder = translation; // placeholders are plain text; keep same but allow opt-in flag for clarity
+      } else {
+        el.placeholder = translation;
+      }
+    });
+    document.documentElement.lang = state.lang;
+    document.documentElement.dir = (state.lang === 'ar') ? 'rtl' : 'ltr';
+    renderFeatures();
+    renderTLDs();
+    // debug and ensure current result rerenders for translated strings
+    console.debug('applyTranslations -> lang', state.lang);
+    try { showDebug('applyTranslations -> ' + state.lang); } catch (e) {}
+    try { rerenderCurrentResult(); } catch (e) { /* ignore */ }
+  }
+
+  function renderFeatures() {
+    const grid = document.getElementById('featuresGrid');
+    grid.innerHTML = FEATURES.map(f => `
+      <div class="feature-card">
+        <div class="feature-icon">${f.icon}</div>
+        <div class="feature-title">${t(f.titleKey)}</div>
+        <div class="feature-desc">${t(f.descKey)}</div>
+      </div>
+    `).join('');
+  }
+
+  // ====== TLD RENDERING ======
+  function renderTLDs() {
+    const grid = document.getElementById('tldGrid');
+    const data = TLD_DATA[state.tldCategory] || [];
+    grid.innerHTML = data.map((item, i) => {
+      const bars = item.bars.map(h => `<span style="height:${h}px"></span>`).join('');
+      const trendLabel = item.trend === 'hot' ? t('tld.hot') : (item.trend === 'up' ? t('tld.trending') : t('tld.stable'));
+      return `
+        <div class="tld-card" data-ext="${escapeHtml(item.ext)}" style="animation: fadeUp .5s cubic-bezier(.2,.7,.2,1) ${i * 40}ms both">
+          <div class="quick-add" title="Quick select">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+          <div class="tld-ext">${escapeHtml(item.ext)}</div>
+          <div class="tld-price"><span class="from">${t('tld.from')}</span>${formatCurrency(item.price)}</div>
+          <div class="tld-trend ${item.trend}">
+            <div class="trend-bar">${bars}</div>
+            <span>${trendLabel}</span>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    grid.querySelectorAll('.tld-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const ext = card.getAttribute('data-ext');
+        const current = input.value.trim().replace(/\.[a-z]{2,}$/i, '');
+        if (current) {
+          input.value = current + ext;
+          input.focus();
+          runSearch();
+        } else {
+          input.value = 'yourbrand' + ext;
+          input.focus();
+        }
+      });
+    });
+  }
+
+  function setupTLDTabs() {
+    document.querySelectorAll('.tld-tab').forEach(tab => {
+      if (tab.dataset._init) return;
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tld-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        state.tldCategory = tab.getAttribute('data-cat');
+        renderTLDs();
+      });
+      tab.dataset._init = '1';
+    });
+  }
+
+  // ====== AUTOCOMPLETE with multi-year pricing ======
+  let debounceTimer;
+  function updateAutocomplete() {
+    // Autocomplete intentionally disabled to avoid showing suggestions during searches.
+    return;
+  }
+
+  function setupAutocomplete() {
+    // Autocomplete is disabled by default. It will not open on typing or focus.
+    // Keep a click listener to close the panel when clicking outside. Make idempotent.
+    if (window._autocompleteInit) return;
+    document.addEventListener('click', (e) => {
+      if (!searchBox || !autocomplete) return;
+      if (!searchBox.contains(e.target) && !autocomplete.contains(e.target)) {
+        autocomplete.classList.remove('open');
+      }
+    });
+    window._autocompleteInit = true;
+  }
+
+  // ====== DROPDOWNS ======
+  function buildDropdowns() {
+    const rd = document.getElementById('regionDropdown');
+    rd.innerHTML = REGIONS.map(r => `
+      <div class="dropdown-item ${r.code === state.region.code ? 'active' : ''}" data-region="${r.code}">
+        <span class="flag">${r.flag}</span><span>${r.name}</span><span class="meta">${r.currency}</span>
+      </div>`).join('');
+    rd.querySelectorAll('.dropdown-item').forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const region = REGIONS.find(r => r.code === item.getAttribute('data-region'));
+      if (region) {
+        state.region = region; state.currency = region.currency; state.lang = region.lang;
+        updateSelectors();
+        // Try applying a snapshot first. If none applied, fall back to translations.
+        try {
+          const ok = applyPageSnapshot(state.lang);
+          if (!ok) applyTranslations();
+        } catch (e) { try { applyTranslations(); } catch (e2) {} }
+        closeAllDropdowns(); rerenderCurrentResult(); renderTLDs();
+      }
+    });
+    });
+
+    // currency dropdown removed; currency follows region selection
+
+    const ld = document.getElementById('langDropdown');
+    ld.innerHTML = Object.entries(LANGUAGES).map(([code, l]) => `
+      <div class="dropdown-item ${code === state.lang ? 'active' : ''}" data-lang="${code}">
+        <span class="flag">${l.flag}</span><span>${l.name}</span>
+      </div>`).join('');
+    ld.querySelectorAll('.dropdown-item').forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const newLang = item.getAttribute('data-lang');
+        state.lang = newLang;
+        try { showDebug('lang selected -> ' + newLang); } catch (e) {}
+        updateSelectors();
+        try {
+          const ok = applyPageSnapshot(state.lang);
+          if (!ok) applyTranslations();
+        } catch (e) { try { applyTranslations(); } catch (e2) {} }
+        closeAllDropdowns();
+      });
+    });
+  }
+
+  function rerenderCurrentResult() {
+    const currentDomain = result.getAttribute('data-domain');
+    const currentPrice = result.getAttribute('data-price');
+    if (currentDomain && currentPrice) renderAvailable(currentDomain, parseFloat(currentPrice));
+  }
+
+  function updateSelectors() {
+    document.getElementById('regionFlag').textContent = state.region.flag;
+    document.getElementById('regionLabel').textContent = state.region.code;
+    // update language label and icon
+    document.getElementById('langLabel').textContent = state.lang.toUpperCase();
+    document.querySelectorAll('#regionDropdown .dropdown-item').forEach(el => el.classList.toggle('active', el.getAttribute('data-region') === state.region.code));
+    document.querySelectorAll('#langDropdown .dropdown-item').forEach(el => el.classList.toggle('active', el.getAttribute('data-lang') === state.lang));
+  }
+
+  function closeAllDropdowns() { document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open')); }
+
+  function setupSelectors() {
+    ['regionSelector', 'langSelector'].forEach(id => {
+      const sel = document.getElementById(id);
+      const dd = sel.querySelector('.dropdown');
+      sel.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dd.classList.contains('open');
+        closeAllDropdowns();
+        if (!isOpen) dd.classList.add('open');
+      });
+    });
+    document.addEventListener('click', closeAllDropdowns);
+  }
+
+  // Event delegation safeguard: handle clicks on language items even if listeners weren't attached
+  document.addEventListener('click', (e) => {
+    const li = e.target.closest && e.target.closest('#langDropdown .dropdown-item');
+    if (li) {
+      e.stopPropagation();
+      const newLang = li.getAttribute('data-lang');
+      if (newLang && newLang !== state.lang) {
+        console.debug('lang dropdown delegated click ->', newLang);
+        try { showDebug('lang dropdown delegated -> ' + newLang); } catch (e) {}
+        state.lang = newLang;
+        updateSelectors();
+        try {
+          const ok = applyPageSnapshot(state.lang);
+          if (!ok) applyTranslations();
+        } catch (e) { try { applyTranslations(); } catch (e2) {} }
+        closeAllDropdowns();
+      }
+    }
+  });
+
+  // ====== API FUNCTIONS - RAW KEY, NO ENCODING ======
+  async function checkAvailability(domain) {
+    // Build URL with RAW API key (no encodeURIComponent on the key itself)
+    const url = `${CONFIG.ENDPOINTS.availability}?APIKey=${CONFIG.API_KEY}&websiteName=${encodeURIComponent(domain)}`;
+    const res = await fetch(url, { method: 'GET' });
+    const text = await res.text();
+    
+    // Parse response
+    let data;
+    try { data = JSON.parse(text); } catch { data = { _raw: text }; }
+    
+    // Check for auth errors
+    if (res.status === 401 || res.status === 402 || 
+        (data && (data.statusCode === 401 || data.statusCode === 402 || data.error || data.message?.includes('Invalid')))) {
+      throw new Error('AUTH');
+    }
+    
+    return data;
+  }
+
+  async function checkPrice(domain) {
+    const url = `${CONFIG.ENDPOINTS.pricing}?APIKey=${CONFIG.API_KEY}&websiteName=${encodeURIComponent(domain)}`;
+    const res = await fetch(url, { method: 'GET' });
+    const text = await res.text();
+    
+    let data;
+    try { data = JSON.parse(text); } catch { data = { _raw: text }; }
+    console.debug('checkPrice url:', url);
+    console.debug('checkPrice parsed response:', data);
+    
+    if (res.status === 401 || res.status === 402 || 
+        (data && (data.statusCode === 401 || data.statusCode === 402 || data.error || data.message?.includes('Invalid')))) {
+      throw new Error('AUTH');
+    }
+    
+    return data;
+  }
+
+  async function getSuggestions(keyword) {
+    const url = `${CONFIG.ENDPOINTS.suggestions}?APIKey=${CONFIG.API_KEY}&keyword=${encodeURIComponent(keyword)}&maxResult=5`;
+    const res = await fetch(url, { method: 'GET' });
+    const text = await res.text();
+    
+    let data;
+    try { data = JSON.parse(text); } catch { data = { _raw: text }; }
+    
+    if (res.status === 401 || res.status === 402 || 
+        (data && (data.statusCode === 401 || data.statusCode === 402 || data.error || data.message?.includes('Invalid')))) {
+      throw new Error('AUTH');
+    }
+    
+    return data;
+  }
+
+  // ====== RESPONSE PARSERS ======
+  function isAvailable(data) {
+    if (!data || typeof data !== 'object') return false;
+    
+    // ConnectReseller typical response fields
+    if (typeof data.IsAvailable === 'boolean') return data.IsAvailable;
+    if (typeof data.isAvailable === 'boolean') return data.isAvailable;
+    if (typeof data.Available === 'boolean') return data.Available;
+    if (typeof data.available === 'boolean') return data.available;
+    
+    // String status
+    if (typeof data.Status === 'string') {
+      const s = data.Status.toLowerCase();
+      return s === 'available' || s === 'true' || s === 'yes';
+    }
+    if (typeof data.status === 'string') {
+      const s = data.status.toLowerCase();
+      return s === 'available' || s === 'true' || s === 'yes';
+    }
+    
+    // Nested responseData (ConnectReseller format)
+    if (data.responseData && typeof data.responseData === 'object') {
+      if (typeof data.responseData.available === 'boolean') return data.responseData.available;
+      if (typeof data.responseData.Available === 'boolean') return data.responseData.Available;
+      if (typeof data.responseData.isAvailable === 'boolean') return data.responseData.isAvailable;
+      if (typeof data.responseData.IsAvailable === 'boolean') return data.responseData.IsAvailable;
+    }
+
+    // Nested response
+    if (data.Response && typeof data.Response === 'object') return isAvailable(data.Response);
+    if (data.data && typeof data.data === 'object') return isAvailable(data.data);
+
+    return false;
+  }
+
+  function extractBasePrice(data) {
+    if (!data || typeof data !== 'object') return null;
+    
+    // Try common candidate fields (allow numeric strings)
+    const candidates = [data.Price, data.price, data.RegisterPrice, data.registerPrice, data.PurchasePrice, data.StandardPrice, data.Amount, data.registrationFee, data.RegistrationFee];
+    for (const c of candidates) {
+      const v = applyMarkup(c);
+      if (v !== null) return v;
+    }
+
+    // Check nested responseData (ConnectReseller format)
+    if (data.responseData && typeof data.responseData === 'object') {
+      const rd = data.responseData;
+      const rdCandidates = [rd.Price, rd.price, rd.RegisterPrice, rd.registerPrice, rd.PurchasePrice, rd.StandardPrice, rd.Amount, rd.registrationFee, rd.RegistrationFee];
+      for (const c of rdCandidates) {
+        const v = applyMarkup(c);
+        if (v !== null) return v;
+      }
+      // Handle array-of-objects like: { "0": [{ "description": "Registration Price for 1 year is 11.99" }, ...] }
+      for (const k of Object.keys(rd)) {
+        const val = rd[k];
+        if (Array.isArray(val) && val.length) {
+          const preferYears = CONFIG?.YEARS ? CONFIG.YEARS[0] : 1;
+          let fallbackPrice = null;
+          for (const item of val) {
+            const desc = item?.description ?? item?.Description ?? item?.desc ?? item?.text;
+            if (typeof desc === 'string') {
+              const yearMatch = desc.match(/(\d+)\s*year/i);
+              const priceMatch = desc.match(/(?:is|at)\s*([0-9]+(?:\.[0-9]+)?)/i) || desc.match(/([0-9]+(?:\.[0-9]+)?)(?!.*[0-9])/);
+              const year = yearMatch ? Number(yearMatch[1]) : null;
+              const price = priceMatch ? Number(priceMatch[1]) : null;
+              if (price && year === preferYears) return applyMarkup(price);
+              if (price && fallbackPrice === null) fallbackPrice = price;
+            }
+          }
+          if (fallbackPrice !== null) return applyMarkup(fallbackPrice);
+        }
+      }
+    }
+
+    // Check arrays of prices like PriceList / Prices / priceList
+    const priceArrays = (data.PriceList || data.Prices || data.priceList || data.prices || data.PricesList || data.pricelist);
+    if (Array.isArray(priceArrays) && priceArrays.length) {
+      // prefer entry matching 1 year or CONFIG.YEARS[0]
+      const preferYears = CONFIG?.YEARS ? CONFIG.YEARS[0] : 1;
+      let entry = priceArrays.find(p => (p.Years ?? p.years ?? p.Term ?? p.term) === preferYears) || priceArrays[0];
+      const candidate = entry?.Price ?? entry?.price ?? entry?.Amount ?? entry?.RegistrationFee ?? entry?.registrationFee;
+      const v = applyMarkup(candidate);
+      if (v !== null) return v;
+    }
+
+    // If we have raw text (non-JSON) try to extract a number from it (HTML or text)
+    if (typeof data._raw === 'string') {
+      const txt = data._raw.replace(/<[^>]*>/g, ' ');
+      const m = txt.match(/([0-9]+(?:\.[0-9]{1,2})?)/);
+      if (m) {
+        const v = applyMarkup(m[1]);
+        if (v !== null) return v;
+      }
+    }
+
+    // Arrays (some APIs return pricing arrays)
+    if (Array.isArray(data) && data.length) {
+      const first = data[0];
+      const v = applyMarkup(first?.Price ?? first?.price ?? first?.RegisterPrice ?? first?.registrationFee);
+      if (v !== null) return v;
+    }
+
+    // Pricing object with Register/Price
+    if (data.Pricing && typeof data.Pricing === 'object') {
+      const v = applyMarkup(data.Pricing.Register ?? data.Pricing.register ?? data.Pricing.Price ?? data.Pricing.price);
+      if (v !== null) return v;
+    }
+    // Nested
+    if (data.Response && typeof data.Response === 'object') return extractBasePrice(data.Response);
+    if (data.data && typeof data.data === 'object') return extractBasePrice(data.data);
+
+    // Fallback: search object for numeric fields matching price-like keys
+    function findNumeric(obj, depth = 3) {
+      if (depth < 0 || obj == null) return null;
+      if (typeof obj === 'number' && isFinite(obj) && obj > 0) return obj;
+      if (typeof obj === 'string') {
+        const cleaned = obj.replace(/[^0-9.\-]+/g, '');
+        const n = Number(cleaned);
+        if (isFinite(n) && n > 0) return n;
+        return null;
+      }
+      if (Array.isArray(obj)) {
+        for (const it of obj) {
+          const v = findNumeric(it, depth - 1);
+          if (v !== null) return v;
+        }
+      }
+      if (typeof obj === 'object') {
+        for (const k of Object.keys(obj)) {
+          if (/price|register|amount|fee|cost|sale/i.test(k)) {
+            const v = findNumeric(obj[k], depth - 1);
+            if (v !== null) return v;
+          }
+        }
+        for (const k of Object.keys(obj)) {
+          const v = findNumeric(obj[k], depth - 1);
+          if (v !== null) return v;
+        }
+      }
+      return null;
+    }
+
+    const found = findNumeric(data, 3);
+    if (found !== null) return applyMarkup(found);
+
+    return null;
+  }
+
+  function extractSuggestions(data) {
+    if (!data) return [];
+    
+    let list = [];
+    if (Array.isArray(data)) list = data;
+    else if (Array.isArray(data.Suggestions)) list = data.Suggestions;
+    else if (Array.isArray(data.suggestions)) list = data.suggestions;
+    else if (Array.isArray(data.DomainSuggestions)) list = data.DomainSuggestions;
+    else if (Array.isArray(data.Results)) list = data.Results;
+    else if (data.Suggestions && typeof data.Suggestions === 'object') {
+      list = Object.keys(data.Suggestions);
+    }
+    
+    return list.slice(0, 5).map(item => {
+      if (typeof item === 'string') return { domain: item };
+      if (!item || typeof item !== 'object') return null;
+      const domain = item.DomainName || item.domainName || item.Name || item.name || item.Domain || item.domain || item.Suggestion || item.suggestion || '';
+      return domain ? { domain } : null;
+    }).filter(x => x && x.domain);
+  }
+
+  // ====== RENDERING ======
+  const renderLoader = () => {
+    result.innerHTML = `<div class="card"><div class="loader"><div class="loader-orb"><div class="loader-core"></div></div></div></div>`;
+  };
+
+  const renderError = (type) => {
+    const msg = t('error.' + type) || t('error.generic');
+    result.innerHTML = `
+      <div class="error">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span>${escapeHtml(msg)}</span>
+      </div>`;
+  };
+
+  const renderAvailable = (domain, basePrice) => {
+    result.setAttribute('data-domain', domain);
+    result.setAttribute('data-price', basePrice ?? '');
+    const priceForYears = CONFIG.YEARS.map(y => ({ years: y, total: basePrice !== null ? basePrice * y : null }));
+    const bestIdx = priceForYears.findIndex(p => p.years === 3);
+
+    const cards = priceForYears.map((p, i) => `
+      <div class="price-card ${i === bestIdx ? 'best' : ''}" data-years="${p.years}">
+        <div class="years">${p.years} ${p.years === 1 ? t('year') : t('years')}</div>
+        <div class="price">${p.total !== null ? formatCurrency(p.total) : '—'}</div>
+      </div>
+    `).join('');
+
+    result.innerHTML = `
+      <div class="card">
+        <div class="domain-head">
+          <div class="domain-name">${escapeHtml(domain)}</div>
+          <div class="status available"><span class="pulse"></span> ${t('status.available')}</div>
+        </div>
+        <div class="pricing-title">${t('pricing.title')}</div>
+        <div class="pricing-grid">${cards}</div>
+        <div class="cta-row">
+          <button class="btn-primary">${t('cta.cart')}</button>
+          <button class="btn-ghost">${t('cta.checkout')}</button>
+        </div>
+      </div>
+    `;
+  };
+
+  const renderUnavailable = (domain, suggestions) => {
+    const suggHtml = suggestions.length
+      ? suggestions.map((s, i) => {
+          const parts = s.domain.split('.');
+          const base = parts[0];
+          const tld = parts.slice(1).join('.');
+          return `
+            <div class="sugg-card" style="animation-delay:${i * 60}ms" data-domain="${escapeHtml(s.domain)}">
+              <div><div class="name">${escapeHtml(base)}<span class="tld">.${escapeHtml(tld)}</span></div></div>
+              <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>`;
+        }).join('')
+      : `<div class="hint">${t('sugg.empty')}</div>`;
+
+    result.innerHTML = `
+      <div class="card">
+        <div class="domain-head">
+          <div class="domain-name">${escapeHtml(domain)}</div>
+          <div class="status registered"><span class="pulse"></span> ${t('status.registered')}</div>
+        </div>
+        <p style="color:var(--text-1); margin:18px 0 0; font-size:14px; line-height:1.6;">${t('sugg.note')}</p>
+      </div>
+      <div class="card">
+        <div class="suggestions-title">${t('sugg.title')}</div>
+        <div class="suggestions">${suggHtml}</div>
+      </div>
+    `;
+
+    document.querySelectorAll('.sugg-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const d = card.getAttribute('data-domain');
+        if (d) { input.value = d; runSearch(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+      });
+    });
+  };
+
+  // ====== SEARCH ORCHESTRATOR ======
+  // quick price helper removed; searches use main flow
+  async function runSearch() {
+    if (!input || !btn) {
+      try { showDebug('runSearch: missing refs, refreshing',2000); } catch (e) {}
+      refreshElementRefs();
+      try { attachSearchHandlers(); } catch (e) {}
+      if (!input) { try { showDebug('runSearch aborted: still no input',3000); } catch (e) {} ; return; }
+    }
+    const raw = input.value;
+    if (!raw.trim()) { input.focus(); return; }
+    // Prefer the robust normalizer used by backend; fall back to legacy normalizeDomain
+    let domain = null;
+    try {
+      if (window.normalizeDomainInput && typeof window.normalizeDomainInput === 'function') {
+        domain = window.normalizeDomainInput(raw);
+      }
+    } catch (e) { domain = null; }
+    if (!domain) {
+      // fallback to older normalizer for best-effort
+      try { domain = normalizeDomain(raw); } catch (e) { domain = null; }
+    }
+    if (!domain) {
+      try { showDebug('Invalid domain input — could not normalize', 4000); } catch (e) {}
+      result.innerHTML = `<div class="card"><div class="domain-head"><div class="domain-name">${escapeHtml(raw)}</div><div class="status registered">${t('error.invalid')}</div></div></div>`;
+      try { if (btn) btn.disabled = false; } catch (e) {}
+      return;
+    }
+    input.value = domain;
+    try { if (autocomplete && autocomplete.classList) autocomplete.classList.remove('open'); } catch (e) {}
+    try { if (btn) btn.disabled = true; } catch (e) {}
+    renderLoader();
+
+    state.recentSearches.unshift({ domain, timestamp: new Date() });
+    if (state.recentSearches.length > 5) state.recentSearches.pop();
+
+    logToCLI('search', domain);
+
+    try {
+      // Step 1: Check availability
+      let availData;
+      try {
+        availData = await checkAvailability(domain);
+        logToCLI('response', 'availability', availData);
+      } catch (e) {
+        logToCLI('error', 'availability', e.message);
+        if (e.message === 'AUTH') throw new Error('AUTH');
+        throw new Error('NETWORK');
+      }
+
+      const available = isAvailable(availData);
+
+      if (available) {
+        // Step 2: Get pricing
+        let priceData;
+        try {
+          priceData = await checkPrice(domain);
+              // Log truncated in CLI, but also emit full debug info for troubleshooting
+              logToCLI('response', 'pricing', priceData);
+              console.debug('pricing response (full):', priceData);
+              try { await appendToTerminal(cliLine(`<span class="t-info">⟵ pricing (full):</span> <span class="t-out">${escapeHtml(prettyJson(priceData))}</span>`)); } catch (e) { /* ignore */ }
+        } catch (e) {
+          logToCLI('error', 'pricing', e.message);
+          priceData = null;
+        }
+        const basePrice = extractBasePrice(priceData);
+        state.lastBasePrice = basePrice;
+
+        // If pricing endpoint explicitly reports domain not available, fall back to suggestions
+        const respMsg = priceData?.responseMsg;
+        const msgText = (respMsg?.message || '').toString();
+        const isPriceEndpointUnavailable = (
+          priceData === null ||
+          priceData?.responseData == null && (respMsg?.statusCode >= 400 || /not available/i.test(msgText))
+        );
+
+        if (isPriceEndpointUnavailable) {
+          logToCLI('error', 'pricing', respMsg?.message || 'No pricing available');
+          // fetch suggestions instead
+          let suggData;
+          try {
+            suggData = await getSuggestions(extractKeyword(domain));
+            logToCLI('response', 'suggestions', suggData);
+          } catch (e) {
+            logToCLI('error', 'suggestions', e.message);
+            suggData = null;
+          }
+          const suggestions = extractSuggestions(suggData);
+          renderUnavailable(domain, suggestions);
+          logToCLI('result', { domain, available: false, suggestions: suggestions.length });
+          return; // done
+        }
+
+        if (basePrice === null) {
+          console.warn('Price extraction returned null for domain', domain, priceData);
+          try { await appendToTerminal(cliLine(`<span class="t-warn">⚠ pricing parse failed for ${escapeHtml(domain)}</span>`)); } catch(e){}
+          try { await appendToTerminal(cliLine(`<span class="t-info">pricing keys:</span> <span class="t-out">${escapeHtml(Object.keys(priceData || {}).join(', ') || '(raw text)')}</span>`)); } catch(e){}
+        }
+
+        renderAvailable(domain, basePrice);
+        logToCLI('result', { domain, available: true, price: basePrice });
+      } else {
+        // Step 3: Get suggestions
+        let suggData;
+        try {
+          suggData = await getSuggestions(extractKeyword(domain));
+          logToCLI('response', 'suggestions', suggData);
+        } catch (e) {
+          logToCLI('error', 'suggestions', e.message);
+          suggData = null;
+        }
+
+        const suggestions = extractSuggestions(suggData);
+        renderUnavailable(domain, suggestions);
+        logToCLI('result', { domain, available: false, suggestions: suggestions.length });
+      }
+    } catch (err) {
+      const type = err.message === 'AUTH' ? 'auth' : (err.message === 'NETWORK' ? 'network' : 'generic');
+      renderError(type);
+      logToCLI('error', 'general', err.message);
+    } finally {
+      btn.disabled = false;
+    }
+  }
+
+  // ====== CLI ======
+  function appendToTerminal(html) {
+    terminalBody.innerHTML += html;
+    terminalBody.scrollTop = terminalBody.scrollHeight;
+    return Promise.resolve();
+  }
+  function cliLine(text, cls = 't-out') { return `<div class="${cls}">${text}</div>`; }
+
+  function prettyJson(obj) {
+    try {
+      return JSON.stringify(obj, null, 2)
+        .replace(/"([^"]+)":/g, '<span class="t-key">"$1"</span>:')
+        .replace(/: "([^"]+)"/g, ': <span class="t-str">"$1"</span>')
+        .replace(/: (\d+\.?\d*)/g, ': <span class="t-num">$1</span>')
+        .replace(/: (true|false|null)/g, ': <span class="t-warn">$1</span>');
+    } catch { return escapeHtml(String(obj)); }
+  }
+
+  async function logToCLI(type, ...args) {
+    if (type === 'search') {
+      const domain = args[0];
+      const displayKey = maskKey(CONFIG.API_KEY);
+      const displayUrl = `${CONFIG.ENDPOINTS.availability}?APIKey=${displayKey}&websiteName=${escapeHtml(domain)}`;
+      await appendToTerminal(cliLine(`<span class="t-prompt">reseller-hub</span> <span class="t-out">@api</span> <span class="t-info">~</span> <span class="t-cmd">$ curl -X GET</span> <span class="t-str">"${displayUrl}"</span>`));
+      await new Promise(r => setTimeout(r, 200));
+      await appendToTerminal(cliLine(`<span class="t-out">&gt; HTTP/1.1 200 OK</span>`));
+      await appendToTerminal(cliLine(`<span class="t-out">&gt; Content-Type: application/json</span>`));
+    } else if (type === 'response') {
+      const [endpoint, data] = args;
+      const truncated = JSON.stringify(data).length > 500 ? JSON.stringify(data).slice(0, 500) + '...' : JSON.stringify(data);
+      await appendToTerminal(cliLine(`<span class="t-info">⟵ ${endpoint}:</span> <span class="t-out">${escapeHtml(truncated)}</span>`));
+    } else if (type === 'result') {
+      const data = args[0];
+      await appendToTerminal(cliLine(`<span class="t-success">✓ Result:</span> <span class="t-out">${prettyJson(data)}</span>`));
+      await appendToTerminal(cliLine(`<span class="t-success">✓ Completed in ${Math.floor(Math.random() * 150 + 80)}ms</span>`));
+      if (state.recentSearches.length > 0) {
+        await appendToTerminal(cliLine(''));
+        await appendToTerminal(cliLine(`<span class="t-info">── Recent Searches ──────────────────────────</span>`));
+        state.recentSearches.forEach((s, i) => {
+          const time = s.timestamp.toLocaleTimeString();
+          appendToTerminal(cliLine(`<span class="t-out">  ${i + 1}. ${escapeHtml(s.domain)}</span> <span class="t-warn">(${time})</span>`));
+        });
+      }
+      await appendToTerminal(cliLine(''));
+    } else if (type === 'error') {
+      const [endpoint, msg] = args;
+      await appendToTerminal(cliLine(`<span class="t-error">✗ ${endpoint}: ${escapeHtml(msg || 'Unknown error')}</span>`));
+    }
+  }
+
+  let cliTyping = false;
+  async function runDemo() {
+    if (cliTyping) return;
+    cliTyping = true;
+    document.getElementById('cliDemo').disabled = true;
+
+    const demoLines = [
+      { html: cliLine(`<span class="t-info">╔═══════════════════════════════════════════════╗</span>`), delay: 50 },
+      { html: cliLine(`<span class="t-info">║</span>   <span class="t-cmd">Reseller Hub API Console</span> <span class="t-out">v2.4.1</span>              <span class="t-info">║</span>`), delay: 50 },
+      { html: cliLine(`<span class="t-info">║</span>   <span class="t-out">Connected to ConnectReseller API</span>              <span class="t-info">║</span>`), delay: 50 },
+      { html: cliLine(`<span class="t-info">╚═══════════════════════════════════════════════╝</span>`), delay: 50 },
+      { html: cliLine(''), delay: 100 },
+      { html: cliLine(`<span class="t-prompt">reseller-hub</span> <span class="t-out">@api</span> <span class="t-info">~</span> <span class="t-cmd">$ domain check --name=nebula.com</span>`), delay: 300 },
+      { html: cliLine(`<span class="t-out">&gt; GET ${CONFIG.ENDPOINTS.availability}?APIKey=${CONFIG.API_KEY}&websiteName=nebula.com</span>`), delay: 200 },
+      { html: cliLine(`<span class="t-out">&gt; GET ${CONFIG.ENDPOINTS.availability}?APIKey=${maskKey(CONFIG.API_KEY)}&websiteName=nebula.com</span>`), delay: 200 },
+      { html: cliLine(`<span class="t-out">&gt; HTTP/1.1 200 OK (143ms)</span>`), delay: 150 },
+      { html: cliLine(`<span class="t-out">&lt; { </span><span class="t-key">"Domain"</span><span class="t-out">: </span><span class="t-str">"nebula.com"</span><span class="t-out">, </span><span class="t-key">"IsAvailable"</span><span class="t-out">: </span><span class="t-warn">true</span><span class="t-out"> }</span>`), delay: 100 },
+      { html: cliLine(`<span class="t-success">✓ Domain nebula.com is AVAILABLE</span>`), delay: 200 },
+      { html: cliLine(''), delay: 100 },
+      { html: cliLine(`<span class="t-prompt">reseller-hub</span> <span class="t-out">@api</span> <span class="t-info">~</span> <span class="t-cursor"></span>`), delay: 0 }
+    ];
+
+    for (const line of demoLines) {
+      await appendToTerminal(line.html);
+      await new Promise(r => setTimeout(r, line.delay));
+    }
+
+    cliTyping = false;
+    document.getElementById('cliDemo').disabled = false;
+  }
+
+  function setupCLI() {
+    const clearBtn = document.getElementById('cliClear');
+    const demoBtn = document.getElementById('cliDemo');
+    if (!clearBtn || !demoBtn) return;
+    if (clearBtn.dataset._init === '1') return;
+    clearBtn.addEventListener('click', () => {
+      terminalBody.innerHTML = `<div class="t-out">Console cleared.</div><div><span class="t-prompt">reseller-hub</span> <span class="t-out">@api</span> <span class="t-info">~</span> <span class="t-cursor"></span></div>`;
+    });
+    demoBtn.addEventListener('click', runDemo);
+    demoBtn.dataset._init = '1';
+    clearBtn.dataset._init = '1';
+    setTimeout(runDemo, 600);
+  }
+
+  // ====== CHAT WIDGET ======
+  function setupChatWidget() {
+    const fab = document.getElementById('chatFab');
+    const panel = document.getElementById('chatPanel');
+    const closeBtn = document.getElementById('chatClose');
+    const chatInput = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('chatSend');
+    const body = document.getElementById('chatBody');
+
+    if (!fab) return;
+    if (fab.dataset._init === '1') return;
+    fab.addEventListener('click', () => {
+      panel.classList.toggle('open');
+      if (panel.classList.contains('open')) setTimeout(() => chatInput.focus(), 100);
+    });
+    closeBtn.addEventListener('click', () => panel.classList.remove('open'));
+    fab.dataset._init = '1';
+
+    const botReplies = [
+      "Analyzing domain market patterns... I'd recommend considering .io or .ai for tech startups.",
+      "Based on current trends, premium .com domains retain 94% of their value year-over-year.",
+      "Interesting question! Let me query the brand registry database...",
+      "The .app TLD has seen 240% growth in registrations this quarter.",
+      "For a SaaS brand, I'd suggest keeping the name under 8 characters for memorability.",
+      "Domain valuation depends on length, TLD, keyword value, and brandability score.",
+      "Neural brand analysis suggests your keyword has strong commercial intent.",
+      "I'm processing that through our domain intelligence engine..."
+    ];
+
+    function addMsg(text, type) {
+      const msg = document.createElement('div');
+      msg.className = `chat-msg ${type}`;
+      msg.textContent = text;
+      body.appendChild(msg);
+      body.scrollTop = body.scrollHeight;
+    }
+
+    function showTyping() {
+      const t = document.createElement('div');
+      t.className = 'chat-typing';
+      t.id = 'chatTyping';
+      t.innerHTML = '<span></span><span></span><span></span>';
+      body.appendChild(t);
+      body.scrollTop = body.scrollHeight;
+    }
+
+    function removeTyping() {
+      const t = document.getElementById('chatTyping');
+      if (t) t.remove();
+    }
+
+    function handleSend() {
+      const text = chatInput.value.trim();
+      if (!text) return;
+      addMsg(text, 'user');
+      chatInput.value = '';
+      sendBtn.disabled = true;
+      showTyping();
+      setTimeout(() => {
+        removeTyping();
+        addMsg(botReplies[Math.floor(Math.random() * botReplies.length)], 'bot');
+        sendBtn.disabled = false;
+      }, 1200 + Math.random() * 800);
+    }
+
+    sendBtn.addEventListener('click', handleSend);
+    chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') handleSend(); });
+  }
+
+  // ====== EVENTS ======
+  // Attach search handlers idempotently (will reattach after snapshots)
+  attachSearchHandlers();
+
+  // ====== Animated placeholder typing ======
+  const placeholderExamples = ['nebula', 'starlab', 'orbitz', 'solstice', 'aeroweb', 'cloudly', 'vertex'];
+  let phTimer = null; let phIndex = 0; let phChar = 0; let phForward = true;
+  function startPlaceholderTyping() {
+    const el = input;
+    if (!el) return;
+    el.placeholder = '';
+    phTimer = setInterval(() => {
+      const word = placeholderExamples[phIndex % placeholderExamples.length] + '.com';
+      if (phForward) {
+        phChar++;
+        if (phChar >= word.length) { phForward = false; }
+      } else {
+        phChar--;
+        if (phChar <= 0) { phForward = true; phIndex++; }
+      }
+      el.placeholder = word.slice(0, Math.max(0, phChar));
+    }, 120);
+  }
+  function stopPlaceholderTyping() {
+    if (phTimer) { clearInterval(phTimer); phTimer = null; }
+    input.placeholder = t('search.placeholder');
+  }
+  // start typing on load (attachSearchHandlers will also ensure typing starts)
+  startPlaceholderTyping();
+
+  // ====== INIT ======
+  function init() {
+    buildDropdowns();
+    setupSelectors();
+    updateSelectors();
+    applyTranslations();
+    // Pre-register snapshots for all region languages using current DOM sections
+    try {
+      const regionLangs = Array.from(new Set(REGIONS.map(r => r.lang)));
+      regionLangs.forEach(l => {
+        if (!TRANSLATED_SNAPSHOTS[l]) {
+          TRANSLATED_SNAPSHOTS[l] = {
+            '#search': document.querySelector('#search')?.outerHTML || '',
+            '#tld': document.querySelector('#tld')?.outerHTML || '',
+            '#cli': document.querySelector('#cli')?.outerHTML || '',
+            '#features': document.querySelector('#features')?.outerHTML || '',
+            '#stats': document.querySelector('#stats')?.outerHTML || '',
+            'footer': document.querySelector('footer')?.outerHTML || '',
+            '#chatPanel': document.querySelector('#chatPanel')?.outerHTML || ''
+          };
+        }
+      });
+    } catch (e) { /* ignore */ }
+    setupCursorLights();
+    setupParticles();
+    setupScrollReveal();
+    setupCardHover();
+    setupAutocomplete();
+    setupTLDTabs();
+    setupCLI();
+    setupChatWidget();
+    window.addEventListener('load', () => input.focus());
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>
